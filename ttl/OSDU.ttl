@@ -1,0 +1,1993 @@
+# baseURI: http://OSDU_Ontology/OSDU
+# prefix: osdu
+
+@prefix : <http://OSDU_Ontology/OSDU#> .
+@prefix osdu: <http://OSDU_Ontology/OSDU#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+osdu:
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+osdu:ACL
+  a owl:Class ;
+  rdfs:comment "The access control tags associated with this entity." ;
+  rdfs:subClassOf osdu:AbstractAccessControlList ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:AbstractAccessControlList
+  a owl:Class ;
+  rdfs:comment "The access control tags associated with this entity. This structure is included by the SystemProperties \\\"acl\\\", which is part of all OSDU records. Not extensible." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractAliasNames
+  a owl:Class ;
+  rdfs:comment "A list of alternative names for an object.  The preferred name is in a separate, scalar property.  It may or may not be repeated in the alias list, though a best practice is to include it if the list is present, but to omit the list if there are no other names.  Note that the abstract entity is an array so the $ref to it is a simple property reference." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractBusinessRule
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractCommonResources
+  a owl:Class ;
+  rdfs:comment "Common resources to be injected at root 'data' level for every entity, which is persistable in Storage. The insertion is performed by the OsduSchemaComposer script." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractDataset
+  a owl:Class ;
+  rdfs:comment "Schema fragment holding properties common for all datasets." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacility
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacilityEvent
+  a owl:Class ;
+  rdfs:comment "A significant occurrence in the life of a facility, which often changes its state, or the state of one of its components. It can describe a point-in-time (event) or a time interval of a specific type (FacilityEventType)." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacilityOperator
+  a owl:Class ;
+  rdfs:comment "The organisation that was responsible for a facility at some point in time." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacilitySpecification
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacilityState
+  a owl:Class ;
+  rdfs:comment "The life cycle status of a facility at some point in time." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFacilityVerticalMeasurement
+  a owl:Class ;
+  rdfs:comment "A location along a wellbore, _usually_ associated with some aspect of the drilling of the wellbore, but not with any intersecting _subsurface_ natural surfaces." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFile
+  a owl:Class ;
+  rdfs:comment "The schema fragment representing single files" ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFileCollection
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The schema fragment representing file collections." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractFileSourceInfo
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A schema fragment to describe file source information." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoBasinContext
+  a owl:Class ;
+  rdfs:comment "A single, typed basin entity reference, which is 'abstracted' to AbstractGeoContext and then aggregated by GeoContexts properties." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoContext
+  a owl:Class ;
+  rdfs:comment "A geographic context to an entity. It can be either a reference to a GeoPoliticalEntity, Basin, Field, Play or Prospect." ;
+  rdfs:subClassOf osdu:AbstractGeoBasinContext ;
+  rdfs:subClassOf osdu:AbstractGeoFieldContext ;
+  rdfs:subClassOf osdu:AbstractGeoPlayContext ;
+  rdfs:subClassOf osdu:AbstractGeoPoliticalContext ;
+  rdfs:subClassOf osdu:AbstractGeoProspectContext ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoFieldContext
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoPlayContext
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoPoliticalContext
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractGeoProspectContext
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractLegalParentList
+  a owl:Class ;
+  rdfs:comment "A list of entity IDs in the data ecosystem, which act as legal parents to the current entity. This structure is included by the SystemProperties \\\"ancestry\\\", which is part of all OSDU records. Not extensible." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractLegalTags
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractMaster
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractMetaItem
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractQualityMetric
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "Generic quality metric schema fragment containing the universal properties for data profiling and data metrics of OSDU objects." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractReferenceType
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractSpatialLocation
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractWPCGroupType
+  a owl:Class ;
+  rdfs:comment "Generic reference object containing the universal group-type properties of a Work Product Component for inclusion in data type specific Work Product Component objects" ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractWellboreDrillingReason
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AbstractWorkProductComponent
+  a owl:Class ;
+  rdfs:comment "Generic reference object containing the universal properties of a Work Product Component for inclusion in data type specific Work Product Component objects" ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:ActivityType
+  a owl:DatatypeProperty ;
+  rdfs:comment "General method or circumstance of logging - MWD, completion, ..." ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:AliasName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Alternative Name value of defined name type for an object." ;
+  rdfs:domain osdu:AbstractAliasNames ;
+  rdfs:range xsd:string ;
+.
+osdu:AliasNameType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:AliasNameTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "A classification of alias names such as by role played or type of source, such as regulatory name, regulatory code, company code, international standard name, etc." ;
+  rdfs:domain osdu:AbstractAliasNames ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-AliasNameType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:AliasNameType ;
+.
+osdu:Ancestry
+  a owl:Class ;
+  rdfs:comment "The links to data, which constitute the inputs." ;
+  rdfs:subClassOf osdu:AbstractLegalParentList ;
+.
+osdu:ArtefactRole
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:Artefacts
+  a owl:Class ;
+  rdfs:comment "An array of Artefacts - each artefact has a Role, Resource tuple. An artefact is distinct from the file, in the sense certain valuable information is generated during loading process (Artefact generation process). Examples include retrieving location data, performing an OCR which may result in the generation of artefacts which need to be preserved distinctly" ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:AttributionAuthority
+  a owl:DatatypeProperty ;
+  rdfs:comment "Name of the authority, or organisation, which governs the entity value and from which it is sourced." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range xsd:string ;
+.
+osdu:AttributionPublication
+  a owl:DatatypeProperty ;
+  rdfs:comment "The distinct instance of the attribution publication, by version number, sequence number, date of publication, etc., that was used for the entity value." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range xsd:string ;
+.
+osdu:AttributionRevision
+  a owl:DatatypeProperty ;
+  rdfs:comment "The distinct instance of the attribution publication, by version number, sequence number, date of publication, etc., that was used for the entity value." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range xsd:string ;
+.
+osdu:AuthorIDs
+  a owl:DatatypeProperty ;
+  rdfs:comment "Array of Authors' names of the work product component.  Could be a person or company entity." ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:BaseDepth
+  a owl:DatatypeProperty ;
+  rdfs:comment "UOM_via_property:DepthUnit" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:decimal ;
+.
+osdu:BaseForConversion
+  a owl:DatatypeProperty ;
+  rdfs:comment "The base unit for unit conversion. The symbol of the unit which is used for conversion for of all members of this class. The corresponding baseForConversion must be a member of this class. To convert from one member to another member, you logically convert from the source member to the base and then convert from the base to the target member." ;
+  rdfs:domain osdu:UnitQuantity ;
+  rdfs:range xsd:string ;
+.
+osdu:Basin
+  a owl:Class ;
+  rdfs:subClassOf osdu:MasterData ;
+.
+osdu:BasinID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Reference to Basin." ;
+  rdfs:domain osdu:AbstractGeoBasinContext ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Basin:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Basin ;
+.
+osdu:BasinType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:BottomMeasuredDepth
+  a owl:DatatypeProperty ;
+  rdfs:comment "OSDU Native Bottom Measured Depth of the Well Log." ;
+  rdfs:comment "UOM:length" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:decimal ;
+.
+osdu:BusinessActivities
+  a owl:DatatypeProperty ;
+  rdfs:comment "Array of business processes/workflows that the work product component has been through (ex. well planning, exploration)." ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:BusinessRules
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The BusinessRules on which this quality evaluation is based on combined with the run status results." ;
+  rdfs:subClassOf osdu:AbstractBusinessRule ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:Checksum
+  a owl:DatatypeProperty ;
+  rdfs:comment "MD5 checksum of file bytes - a 32 byte hexadecimal number." ;
+  rdfs:domain osdu:AbstractFile ;
+  rdfs:domain osdu:AbstractFileCollection ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[0-9a-fA-F]{32}" ;
+.
+osdu:Code
+  a owl:DatatypeProperty ;
+  rdfs:comment "The abbreviation or mnemonic for a reference type if defined. Example: WELL and WLBR." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range xsd:string ;
+.
+osdu:CoefficientA
+  a owl:DatatypeProperty ;
+  rdfs:comment "The A parameter; formula: y = (A+B*x)/(C+D*x)" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:decimal ;
+.
+osdu:CoefficientB
+  a owl:DatatypeProperty ;
+  rdfs:comment "The B parameter; formula: y = (A+B*x)/(C+D*x)" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:decimal ;
+.
+osdu:CoefficientC
+  a owl:DatatypeProperty ;
+  rdfs:comment "The C parameter; formula: y = (A+B*x)/(C+D*x)" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:decimal ;
+.
+osdu:CoefficientD
+  a owl:DatatypeProperty ;
+  rdfs:comment "The D parameter; formula: y = (A+B*x)/(C+D*x)" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:decimal ;
+.
+osdu:CoordinateReferenceSystem
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:CreationDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date that a resource (work  product component here) is formed outside of OSDU before loading (e.g. publication date)." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:CurrentOperatorID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The current operator organization ID; the organization ID may also be found in the FacilityOperatorOrganisationID of the FacilityOperator array providing the actual dates." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+.
+osdu:CurveID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The ID of the Well Log Curve" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:CurveQuality
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Quality of the Log Curve." ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:CurveUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "Unit of Measure for the Log Curve" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:UnitOfMeasure ;
+.
+osdu:CurveVersion
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Version of the Log Curve." ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:Curves
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:DataQuality
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "This is used to store result from a run of Data Quality Metric Evaluation engine. Captures summary information, such as which Business rule-set(s) and rule(s) have been used, when this was run and by whom. Detailed result (such as which rule failed, for which meta data item and what was offending value causing the rule to fail) is meant to be made available in a file that is linked to this work-product component. Through Lineage Assertion, this can relate to the entities which were used for the run of Evaluation engine, such as a collection of wells whose meta data were inspected by using a set of rules." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractWPCGroupType ;
+  rdfs:subClassOf osdu:AbstractWorkProductComponent ;
+  rdfs:subClassOf osdu:WorkProductComponent ;
+.
+osdu:DataSourceOrganisationID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The main source of the header information." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+.
+osdu:Dataset
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:subClassOf osdu:System ;
+.
+osdu:DatasetProperties
+  a owl:Class ;
+  rdfs:comment "Placeholder for a specialization." ;
+  rdfs:comment "The dataset properties for a file collection." ;
+  rdfs:comment "The dataset properties for a single file." ;
+  rdfs:subClassOf osdu:AbstractFileSourceInfo ;
+  rdfs:subClassOf owl:Thing ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:Datasets
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN which identifies this OSDU File resource." ;
+  rdfs:comment "\"GroupType\": \"dataset\"" ;
+  rdfs:domain osdu:AbstractWPCGroupType ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:dataset\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:DateStamp
+  a owl:DatatypeProperty ;
+  rdfs:comment "Date curve was created in the database. \"format\": \"date-time\"" ;
+  rdfs:comment "\"DateTime\"" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:DefaultVerticalCRSID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The default vertical coordinate reference system used in the vertical measurements for a well or wellbore if absent from input vertical measurements and there is no other recourse for obtaining a valid CRS." ;
+  rdfs:domain osdu:Well ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:CoordinateReferenceSystem ;
+.
+osdu:DefaultVerticalMeasurementID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The default datum reference point, or zero depth point, used to determine other points vertically in a well.  References an entry in the VerticalMeasurements array." ;
+  rdfs:comment "The default datum reference point, or zero depth point, used to determine other points vertically in a wellbore.  References an entry in the Vertical Measurements array of this wellbore." ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          osdu:Well
+          osdu:Wellbore
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+osdu:DefinitionOrganisationID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The StandardsOrganisation (reference-data) or Organisation (master-data) that provided the name (the source)." ;
+  rdfs:domain osdu:AbstractAliasNames ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:(reference-data\\\\-\\\\-StandardsOrganisation|master-data\\\\-\\\\-Organisation):[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+  owl:allValuesFrom osdu:StandardsOrganisation ;
+.
+osdu:DefinitiveTrajectoryID
+  a owl:DatatypeProperty ;
+  rdfs:comment "SRN of Wellbore Trajectory which is considered the authoritative or preferred version." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-GeologicalFormation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:WellboreTrajectory ;
+.
+osdu:DepthCoding
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Coding of the depth." ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^REGULAR|DISCRETE$" ;
+.
+osdu:DepthUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "Unit of Measure for Top and Base depth" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:UnitOfMeasure ;
+.
+osdu:Description
+  a owl:DatatypeProperty ;
+  rdfs:comment "An optional, textual description of the dataset." ;
+  rdfs:comment "Description.  Summary of the work product component.  Not the same as Remark which captures thoughts of creator about the wpc." ;
+  rdfs:comment "The text which describes a NAME TYPE in detail." ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:DrillingFluidProperty
+  a owl:DatatypeProperty ;
+  rdfs:comment "Type of mud at time of logging (oil, water based,...)" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:DrillingReasonType
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:DrillingReasonTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Identifier of the drilling reason type for the corresponding time period." ;
+  rdfs:domain osdu:AbstractWellboreDrillingReason ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-DrillingReasonType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:DrillingReasonType ;
+.
+osdu:DrillingReasons
+  a owl:Class ;
+  rdfs:comment "The history of drilling reasons of the wellbore" ;
+  rdfs:subClassOf osdu:AbstractWellboreDrillingReason ;
+.
+osdu:EffectiveDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "The date and time at which a given organisation becomes effective." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:EffectiveDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "The date and time at which a vertical measurement instance becomes effective." ;
+  rdfs:comment "The date and time at which the event becomes effective." ;
+  rdfs:comment "The date and time at which the event took place or takes effect" ;
+  rdfs:comment "The date and time at which the facility operator becomes effective." ;
+  rdfs:comment "The date and time at which the facility specification instance becomes effective." ;
+  rdfs:comment "The date and time at which the facility state becomes effective." ;
+  rdfs:comment "The date and time when an alias name becomes effective." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractAliasNames ;
+  rdfs:domain osdu:AbstractFacilityEvent ;
+  rdfs:domain osdu:AbstractFacilityOperator ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:domain osdu:AbstractFacilityState ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:AbstractWellboreDrillingReason ;
+  rdfs:range xsd:string ;
+.
+osdu:EncodingFormatType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:EncodingFormatTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "EncodingFormatType ID reference value relationship. It can me a mime-type or media-type." ;
+  rdfs:comment "Only used in FileCollection where the EncodingFormatType differs from data DatasetDefault specified in data.EncodingFormatTypeID: the media type specification for this dataset." ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-EncodingFormatType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:EncodingFormatType ;
+.
+osdu:EndDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:LogServiceDateInterval ;
+  rdfs:range xsd:string ;
+.
+osdu:Endian
+  a owl:DatatypeProperty ;
+  rdfs:comment "Endianness of binary value.  Enumeration: \\\"BIG\\\", \\\"LITTLE\\\".  If absent, applications will need to interpret from context indicators." ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:range xsd:string ;
+  owl:oneOf (
+      <http://OSDU_Ontology/Volve#Big>
+      <http://OSDU_Ontology/Volve#Little>
+    ) ;
+.
+osdu:EvaluatedRecordID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The reference to the evaluated data record. The record version number is required." ;
+  rdfs:domain osdu:DataQuality ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:(master-data|work-product|work-product-component)\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:ExistenceKind
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:ExistenceKind_Property
+  a owl:DatatypeProperty ;
+  rdfs:comment "Where does this data resource sit in the cradle-to-grave span of its existence?" ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ExistenceKind:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ExistenceKind ;
+.
+osdu:ExtensionProperties
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:FacilityEventType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:FacilityEventTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The facility event type is a picklist. Examples: 'Permit', 'Spud', 'Abandon', etc." ;
+  rdfs:domain osdu:AbstractFacilityEvent ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityEventType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:FacilityEventType ;
+.
+osdu:FacilityEvents
+  a owl:Class ;
+  rdfs:comment "A list of key facility events." ;
+  rdfs:subClassOf osdu:AbstractFacilityEvent ;
+.
+osdu:FacilityID
+  a owl:DatatypeProperty ;
+  rdfs:comment "A system-specified unique identifier of a Facility." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  owl:allValuesFrom osdu:FacilityType ;
+.
+osdu:FacilityName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Name of the Facility." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+.
+osdu:FacilityNameAliases
+  a owl:Class ;
+  rdfs:comment "Alternative names, including historical, by which this facility is/has been known." ;
+  rdfs:subClassOf osdu:AbstractAliasNames ;
+.
+osdu:FacilityOperatorID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Internal, unique identifier for an item 'AbstractFacilityOperator'. This identifier is used by 'AbstractFacility.CurrentOperatorID' and 'AbstractFacility.InitialOperatorID'." ;
+  rdfs:domain osdu:AbstractFacilityOperator ;
+  rdfs:range xsd:string ;
+.
+osdu:FacilityOperatorOrganisationID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The company that currently operates, or previously operated the facility" ;
+  rdfs:domain osdu:AbstractFacilityOperator ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+.
+osdu:FacilityOperators
+  a owl:Class ;
+  rdfs:comment "The history of operator organizations of the facility." ;
+  rdfs:subClassOf osdu:AbstractFacilityOperator ;
+.
+osdu:FacilitySpecificationDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "The actual date and time value of the parameter." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:string ;
+.
+osdu:FacilitySpecificationIndicator
+  a owl:DatatypeProperty ;
+  rdfs:comment "The actual indicator value of the parameter." ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:boolean ;
+.
+osdu:FacilitySpecificationQuantity
+  a owl:DatatypeProperty ;
+  rdfs:comment "The value for the specified parameter type." ;
+  rdfs:comment "UOM_via_property:UnitOfMeasureID" ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:decimal ;
+.
+osdu:FacilitySpecificationText
+  a owl:DatatypeProperty ;
+  rdfs:comment "The actual text value of the parameter." ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:string ;
+.
+osdu:FacilitySpecifications
+  a owl:Class ;
+  rdfs:comment "facilitySpecification maintains the specification like slot name, wellbore drilling permit number, rig name etc." ;
+  rdfs:subClassOf osdu:AbstractFacilitySpecification ;
+.
+osdu:FacilityStateType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:FacilityStateTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The facility life cycle state from planning to abandonment." ;
+  rdfs:domain osdu:AbstractFacilityState ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityStateType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:FacilityStateType ;
+.
+osdu:FacilityStates
+  a owl:Class ;
+  rdfs:comment "The history of life cycle states the facility has been through." ;
+  rdfs:subClassOf osdu:AbstractFacilityState ;
+.
+osdu:FacilityType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:FacilityTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The definition of a kind of capability to perform a business function or a service." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:Field
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:subClassOf osdu:MasterData ;
+.
+osdu:FieldID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Reference to Field." ;
+  rdfs:domain osdu:AbstractGeoFieldContext ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Field:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Field ;
+.
+<http://OSDU_Ontology/OSDU#File.Generic>
+  a owl:Class ;
+  rdfs:comment "The Generic File template." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractDataset ;
+  rdfs:subClassOf osdu:AbstractFile ;
+  rdfs:subClassOf osdu:Dataset ;
+.
+<http://OSDU_Ontology/OSDU#FileCollection.Generic>
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The generic file collection template." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractDataset ;
+  rdfs:subClassOf osdu:AbstractFileCollection ;
+  rdfs:subClassOf osdu:Dataset ;
+.
+osdu:FileCollectionPath
+  a owl:DatatypeProperty ;
+  rdfs:comment "An optional path to the file collection." ;
+  rdfs:domain osdu:DatasetProperties ;
+  rdfs:range xsd:string ;
+.
+osdu:FileSize
+  a owl:DatatypeProperty ;
+  rdfs:comment "Length of file in bytes. Implemented as string. The value must be convertible to a long integer (sizes can become very large)." ;
+  rdfs:comment "\"format\": \"integer\"" ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[0-9]+$" ;
+.
+osdu:FileSource
+  a owl:DatatypeProperty ;
+  rdfs:comment "The location of the file. It can be a relative path. The actual access is provided via the File Service. This property is required.\"" ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:domain osdu:FileSourceInfos ;
+  rdfs:range xsd:string ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:FileSourceInfos
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "Array of file collection members as FileSourceInfo." ;
+  rdfs:subClassOf osdu:AbstractFileSourceInfo ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:GeoContexts
+  a owl:Class ;
+  rdfs:comment "List of geographic entities which provide context to the master data. This may include multiple types or multiple values of the same type." ;
+  rdfs:subClassOf osdu:AbstractGeoContext ;
+.
+osdu:GeoTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The BasinType reference of the Basin (via BasinID) for application convenience." ;
+  rdfs:comment "The fixed type 'Field' for this AbstractGeoFieldContext." ;
+  rdfs:comment """\"x-osdu-is-derived\": {
+        \"RelationshipPropertyName\": \"BasinID\",
+        \"TargetPropertyName\": \"BasinTypeID\"
+      }""" ;
+  rdfs:domain osdu:AbstractGeoBasinContext ;
+  rdfs:domain osdu:AbstractGeoFieldContext ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-BasinType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:BasinType ;
+.
+osdu:GeographicBottomHoleLocation
+  a owl:Class ;
+  rdfs:comment "The bottom hole location of the wellbore denoted by a specified geographic horizontal coordinate reference system (Horizontal CRS), such as WGS84, NAD27, or ED50. If both GeographicBottomHoleLocation and ProjectedBottomHoleLocation properties are populated on this wellbore, they must identify the same point, just in different CRSs." ;
+  rdfs:subClassOf osdu:AbstractSpatialLocation ;
+.
+osdu:GeologicalFormation
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:HoleTypeLogging
+  a owl:DatatypeProperty ;
+  rdfs:comment "Description of the hole related type of logging - POSSIBLE VALUE : OpenHole / CasedHole / CementedHole" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^OPENHOLE|CASEDHOLE|CEMENTEDHOLE$" ;
+.
+osdu:ID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Surrogate key to uniquely identify an instance in a domain list." ;
+  rdfs:comment "The object reference identifying the DIRECT, INDIRECT, REFERENCE dependency." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:domain osdu:LineageAssertions ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:InactiveIndicator
+  a owl:DatatypeProperty ;
+  rdfs:comment "By default reference values are considered as 'active'. An absent 'InactiveIndicator' property value means the reference value is in active use. When 'InactiveIndicator' is set true the reverence value is no longer in use and should no longer be offered as a choice." ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range xsd:boolean ;
+.
+osdu:IndexFilePath
+  a owl:DatatypeProperty ;
+  rdfs:comment "An optional path to an index file." ;
+  rdfs:domain osdu:DatasetProperties ;
+  rdfs:range xsd:string ;
+.
+osdu:InitialOperatorID
+  a owl:DatatypeProperty ;
+  rdfs:comment "A initial operator organization ID; the organization ID may also be found in the FacilityOperatorOrganisationID of the FacilityOperator array providing the actual dates." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+.
+osdu:InterestTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Pre-defined reasons for interest in the well or information about the well." ;
+  rdfs:domain osdu:Well ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-WellInterestType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:WellInterestType ;
+.
+osdu:InternalOrganisationIndicator
+  a owl:DatatypeProperty ;
+  rdfs:comment "Indicates if the organisation is internal to the enterprise." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:boolean ;
+.
+osdu:Interpolate
+  a owl:DatatypeProperty ;
+  rdfs:comment "Whether curve can be interpolated or not" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:boolean ;
+.
+osdu:InterpreterName
+  a owl:DatatypeProperty ;
+  rdfs:comment "The name of person who interpreted this Log Curve." ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:IsBaseUnit
+  a owl:DatatypeProperty ;
+  rdfs:comment "True if the unit is a base unit for the unit quantity. If the property is absent, it means the unit is not a base unit." ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:boolean ;
+.
+osdu:IsDiscoverable
+  a owl:DatatypeProperty ;
+  rdfs:comment "A flag that indicates if the work product component is searchable, which means covered in the search index." ;
+  rdfs:domain osdu:AbstractWPCGroupType ;
+  rdfs:range xsd:boolean ;
+.
+osdu:IsExtendedLoad
+  a owl:DatatypeProperty ;
+  rdfs:comment "A flag that indicates if the work product component is undergoing an extended load.  It reflects the fact that the work product component is in an early stage and may be updated before finalization." ;
+  rdfs:domain osdu:AbstractWPCGroupType ;
+  rdfs:range xsd:boolean ;
+.
+osdu:IsProcessed
+  a owl:DatatypeProperty ;
+  rdfs:comment "Indicates if the curve has been (pre)processed or if it is a raw recording" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:boolean ;
+.
+osdu:KickOffWellbore
+  a owl:DatatypeProperty ;
+  rdfs:comment "This is a pointer to the parent wellbore. The wellbore that starts from top has no parent." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Wellbore:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:Legal
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractLegalTags ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:LegalTag
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:Legal ;
+  rdfs:range xsd:string ;
+.
+osdu:LineageAssertions
+  a owl:Class ;
+  rdfs:comment "Defines relationships with other objects (any kind of Resource) upon which this work product component depends.  The assertion is directed only from the asserting WPC to ancestor objects, not children.  It should not be used to refer to files or artefacts within the WPC -- the association within the WPC is sufficient and Artefacts are actually children of the main WPC file. They should be recorded in the Data.Artefacts[] array." ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:LineageRelationshipType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LineageRelationshipType_Property
+  a owl:DatatypeProperty ;
+  rdfs:comment "Used by LineageAssertion to describe the nature of the line of descent of a work product component from a prior Resource, such as DIRECT, INDIRECT, REFERENCE.  It is not for proximity (number of nodes away), it is not to cover all the relationships in a full ontology or graph, and it is not to describe the type of activity that created the asserting WPC.  LineageAssertion does not encompass a full provenance, process history, or activity model." ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LineageRelationshipType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LineageRelationshipType ;
+.
+osdu:LogActivity
+  a owl:DatatypeProperty ;
+  rdfs:comment "Log Activity, used to describe the type of pass such as Calibration Pass - Main Pass - Repeated Pass" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:LogCurveBusinessValue
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LogCurveBusinessValueID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN of the Log Curve Business Value Type." ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveBusinessValue:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LogCurveBusinessValue ;
+.
+osdu:LogCurveFamily
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LogCurveFamilyID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN of the Log Curve Family - which is the detailed Geological Physical Quantity Measured - such as neutron porosity" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveFamily:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LogCurveFamily ;
+.
+osdu:LogCurveMainFamily
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LogCurveMainFamilyID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN of the Log Curve Main Family Type - which is the Geological Physical Quantity measured - such as porosity." ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveMainFamily:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LogCurveMainFamily ;
+.
+osdu:LogCurveType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LogCurveTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN of the Log Curve Business Value Type." ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveBusinessValue:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LogCurveType ;
+.
+osdu:LogRun
+  a owl:DatatypeProperty ;
+  rdfs:comment "Log Run - describe the run of the log - can be a number, but may be also a alphanumeric description such as a version name" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:LogServiceDateInterval
+  a owl:Class ;
+  rdfs:comment "An interval built from two nested values : StartDate and EndDate. It applies to the whole log services and may apply to composite logs as [start of the first run job] and [end of the last run job]Log Service Date" ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:LogSource
+  a owl:DatatypeProperty ;
+  rdfs:comment "OSDU Native Log Source - will be updated for later releases - not to be used yet" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:LogType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:LogVersion
+  a owl:DatatypeProperty ;
+  rdfs:comment "Log Version" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:LoggingDirection
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies whether curves were collected downward or upward" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:LoggingService
+  a owl:DatatypeProperty ;
+  rdfs:comment "Logging Service - mainly a short concatenation of the names of the tools" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:MasterData
+  a owl:Class ;
+  rdfs:subClassOf osdu:System ;
+.
+osdu:MaterialType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:MemberUnits
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies the symbol of a unit of which is a member of this class. Membership indicates that a value of that class can be converted to any other member unit of that class without loss of semantics. This because the conversion formula represents a unitless factor of one." ;
+  rdfs:domain osdu:UnitQuantity ;
+  rdfs:range xsd:string ;
+.
+osdu:Meta
+  a owl:Class ;
+  rdfs:comment "The Frame of Reference meta data section linking the named properties to self-contained definitions." ;
+  rdfs:subClassOf osdu:AbstractMetaItem ;
+.
+osdu:MetadataAdditionalPropertiesTrue
+  a owl:DatatypeProperty ;
+  rdfs:comment "The count of total number of additional properties that are not populated." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountAdditionalProperty
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total number of additional properties." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountFormat
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total number of attributes defined in reference value lists." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountPattern
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total number of attributes with a pattern." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountRequired
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total number required attributes." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountRequiredTrue
+  a owl:DatatypeProperty ;
+  rdfs:comment "The count of required metadata that are not populated." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataCountTotal
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total number of metadata attributes for object in scope." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataFormat
+  a owl:DatatypeProperty ;
+  rdfs:comment "The count of total number where attribute follows the defined reference value lists." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataNull
+  a owl:DatatypeProperty ;
+  rdfs:comment "The count of total number where metadata is not populated." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:MetadataPattern
+  a owl:DatatypeProperty ;
+  rdfs:comment "The count of total number of attributes that follow pattern." ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:decimal ;
+.
+osdu:Mnemonic
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Mnemonic of the Log Curve is the value as received either from Raw Providers or from Internal Processing team" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:string ;
+.
+osdu:Name
+  a owl:DatatypeProperty ;
+  rdfs:comment "An optional name of the dataset, e.g. a user friendly file or file collection name." ;
+  rdfs:comment "Name" ;
+  rdfs:comment "Optional, user-friendly file name." ;
+  rdfs:comment "The name of the entity instance." ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:NameAlias
+  a owl:Class ;
+  rdfs:comment "Alternative names, including historical, by which this entity instance is/has been known." ;
+  rdfs:subClassOf osdu:AbstractAliasNames ;
+.
+osdu:NameAliases
+  a owl:Class ;
+  rdfs:comment "Alternative names, including historical, by which this master data is/has been known (it should include all the identifiers)." ;
+  rdfs:subClassOf osdu:AbstractAliasNames ;
+.
+osdu:NullValue
+  a owl:DatatypeProperty ;
+  rdfs:comment "Indicates that there is no measurement within the curve" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:boolean ;
+.
+osdu:OSDURegion
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:OperatingEnvironment
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:OperatingEnvironmentID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Identifies the Facility's general location as being onshore vs. offshore." ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OperatingEnvironment:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:OperatingEnvironment ;
+.
+osdu:Organisation
+  a owl:Class ;
+  rdfs:comment "A legal or administrative body, institution, or company, or any of its divisions." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractMaster ;
+  rdfs:subClassOf osdu:MasterData ;
+.
+osdu:OrganisationDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment "Textual description of the nature of the organisation." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:OrganisationID
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:OrganisationName
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:OrganisationNameAliases
+  a owl:Class ;
+  rdfs:comment "Alternative names, including historical, by which this organisation entity is/has been known." ;
+  rdfs:subClassOf osdu:AbstractAliasNames ;
+.
+osdu:OrganisationPurposeDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment "The reason why the organization was formed." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:OrganisationType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:OrganisationTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Category the organisational structure fits into. Possible values - Operating Unit, Operating sub Unit, A Business, A Department, Government Agency, etc." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OrganisationType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:OrganisationType ;
+.
+osdu:OtherRelevantDataCountries
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:AbstractLegalTags ;
+  rdfs:domain osdu:Legal ;
+  rdfs:range xsd:string ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:Owners
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:ACL ;
+  rdfs:range xsd:string ;
+.
+osdu:ParameterType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:ParameterTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Parameter type of property or characteristic." ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ParameterType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ParameterType ;
+.
+osdu:ParentUnitQuantity
+  a owl:DatatypeProperty ;
+  rdfs:comment "Optional parent unit quantity code in case a specialized unit quantity is needed. This is typically used to assign display units to particular measurements like cylinder diameter (small) versus geographic distance (large). I this case the persistable reference string will contain the full ancestry, e.g. \\\"L.length.CylinderDiameter\\\"." ;
+  rdfs:domain osdu:UnitQuantity ;
+  rdfs:range xsd:string ;
+.
+osdu:PassNumber
+  a owl:DatatypeProperty ;
+  rdfs:comment "Indicates if the Pass is the Main one (1) or a repeated one - and it's level repetition" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:integer ;
+.
+osdu:PersistableReference
+  a owl:DatatypeProperty ;
+  rdfs:comment "The self-contained, stringified JSON reference for the unit. This value can be attached to data values and data records and carry the unit quantity reference independent of a UnitQuantity instance." ;
+  rdfs:comment "\"example\": \"{\\\"abcd\\\":{\\\"a\\\":2298.35,\\\"b\\\":5.0,\\\"c\\\":9.0,\\\"d\\\":0.0},\\\"symbol\\\":\\\"degF\\\",\\\"baseMeasurement\\\":{\\\"ancestry\\\":\\\"K\\\",\\\"type\\\":\\\"UM\\\"},\\\"type\\\":\\\"UAD\\\"}\"" ;
+  rdfs:comment "{\\\"ancestry\\\":\\\"K.thermodynamic temperature\\\",\\\"type\\\":\\\"UM\\\"}" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:domain osdu:UnitQuantity ;
+  rdfs:range xsd:string ;
+.
+osdu:PersistableReferenceCrs
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+osdu:PreloadFileCreateDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "Optional create date and time of the file prior to up-loading to the platform." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+.
+osdu:PreloadFileCreateUser
+  a owl:DatatypeProperty ;
+  rdfs:comment "Optional user name or reference, who created the file prior to up-loading to the platform." ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+.
+osdu:PreloadFileModifyDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "Preload File Modify Date" ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+.
+osdu:PreloadFileModifyUser
+  a owl:DatatypeProperty ;
+  rdfs:comment "Optional user name or reference, who last modified the file prior to up-loading to the platform." ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+.
+osdu:PreloadFilePath
+  a owl:DatatypeProperty ;
+  rdfs:comment "File system path to the data file as it existed before loading to the data platform." ;
+  rdfs:domain osdu:AbstractFileSourceInfo ;
+  rdfs:range xsd:string ;
+.
+osdu:PrimaryMaterialID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The primary material injected/produced from the wellbore." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-MaterialType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:MaterialType ;
+.
+osdu:ProjectedBottomHoleLocation
+  a owl:Class ;
+  rdfs:comment "The bottom hole location of the wellbore denoted by a projected horizontal coordinate reference system (Horizontal CRS), such a UTM zone. 'Projected' in this property does not mean 'planned' or 'projected-to-bit'. If both GeographicBottomHoleLocation and ProjectedBottomHoleLocation properties are populated on this wellbore, they must identify the same point, just in different CRSs." ;
+  rdfs:subClassOf osdu:AbstractSpatialLocation ;
+.
+osdu:QualityMetric
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The list of evaluated quality metrics for the evaluated data record." ;
+  rdfs:subClassOf osdu:AbstractQualityMetric ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:RefrenceData
+  a owl:Class ;
+  rdfs:subClassOf osdu:System ;
+.
+osdu:ResourceCurationStatus
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:ResourceCurationStatus_Property
+  a owl:DatatypeProperty ;
+  rdfs:comment "Describes the current Curation status." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceCurationStatus:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ResourceCurationStatus ;
+.
+osdu:ResourceHomeRegionID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The name of the home [cloud environment] region for this OSDU resource object." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OSDURegion:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:OSDURegion ;
+.
+osdu:ResourceHostRegionIDs
+  a owl:DatatypeProperty ;
+  rdfs:comment "The name of the host [cloud environment] region(s) for this OSDU resource object." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OSDURegion:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:OSDURegion ;
+.
+osdu:ResourceID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN which identifies this OSDU Artefact resource." ;
+  rdfs:comment "\"GroupType\": \"dataset\"" ;
+  rdfs:domain osdu:Artefacts ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:dataset\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+.
+osdu:ResourceKind
+  a owl:DatatypeProperty ;
+  rdfs:comment "The kind or schema ID of the artefact. Resolvable with the Schema Service." ;
+  rdfs:domain osdu:Artefacts ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[0-9]+.[0-9]+.[0-9]+$" ;
+.
+osdu:ResourceLifecycleStatus
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:ResourceLifecycleStatus_Property
+  a owl:DatatypeProperty ;
+  rdfs:comment "Describes the current Resource Lifecycle status." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceLifecycleStatus:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ResourceLifecycleStatus ;
+.
+osdu:ResourceSecurityClassification
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:ResourceSecurityClassification_Property
+  a owl:DatatypeProperty ;
+  rdfs:comment "Classifies the security level of the resource." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceSecurityClassification:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ResourceSecurityClassification ;
+.
+osdu:RoleID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The SRN of this artefact's role." ;
+  rdfs:domain osdu:Artefacts ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ArtefactRole:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:ArtefactRole ;
+.
+osdu:RunDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "Run timestamp of the Business data quality ruleset." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractQualityMetric ;
+  rdfs:range xsd:string ;
+.
+osdu:SchemaFormatType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:SchemaFormatTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Relationship to the SchemaFormatType reference value." ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-SchemaFormatType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:SchemaFormatType ;
+.
+osdu:SequenceNumber
+  a owl:DatatypeProperty ;
+  rdfs:comment "A number that indicates the order in which wellbores were drilled." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:integer ;
+.
+osdu:ServiceCompanyID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Service Company ID" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Organisation ;
+.
+osdu:Source
+  a owl:DatatypeProperty ;
+  rdfs:comment "The entity that produced the record, or from which it is received; could be an organization, agency, system, internal team, or individual. For informational purposes only, the list of sources is not governed." ;
+  rdfs:domain osdu:AbstractCommonResources ;
+  rdfs:range xsd:string ;
+.
+osdu:SpatialArea
+  a owl:Class ;
+  rdfs:comment "A polygon boundary that reflects the locale of the content of the work product component (location of the subject matter)." ;
+  rdfs:subClassOf osdu:AbstractSpatialLocation ;
+.
+osdu:SpatialLocation
+  a owl:Class ;
+  rdfs:comment "The spatial location information such as coordinates, CRS information (left empty when not appropriate)." ;
+  rdfs:subClassOf osdu:AbstractSpatialLocation ;
+.
+osdu:SpatialPoint
+  a owl:Class ;
+  rdfs:comment "A centroid point that reflects the locale of the content of the work product component (location of the subject matter)." ;
+  rdfs:subClassOf osdu:AbstractSpatialLocation ;
+.
+osdu:StandardsOrganisation
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:StartDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:LogServiceDateInterval ;
+  rdfs:range xsd:string ;
+.
+osdu:SubmitterName
+  a owl:DatatypeProperty ;
+  rdfs:comment "Name of the person that first submitted the work product component to OSDU." ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:System
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+osdu:Tags
+  a owl:DatatypeProperty ;
+  rdfs:comment "Array of key words to identify the work product, especially to help in search." ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range xsd:string ;
+.
+osdu:TargetFormation
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Formation of interest for which the Wellbore is drilled to interact with. The Wellbore may terminate in a lower formation if the requirement is to drill through the entirety of the target formation, therefore this is not necessarily the Formation at TD." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-GeologicalFormation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:GeologicalFormation ;
+.
+osdu:TerminationDate
+  a owl:DatatypeProperty ;
+  rdfs:comment "The date and time at which a given organisation is no longer in effect." ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range xsd:string ;
+.
+osdu:TerminationDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "The data and time when an alias name is no longer in effect." ;
+  rdfs:comment "The date and time at which a vertical measurement instance is no longer in effect." ;
+  rdfs:comment "The date and time at which the event is no longer in effect. For point-in-time events the 'TerminationDateTime' must be set equal to 'EffectiveDateTime'. Open time intervals have an absent 'TerminationDateTime'." ;
+  rdfs:comment "The date and time at which the event is no longer in effect." ;
+  rdfs:comment "The date and time at which the facility operator is no longer in effect. If the operator is still effective, the 'TerminationDateTime' is left absent." ;
+  rdfs:comment "The date and time at which the facility specification instance is no longer in effect." ;
+  rdfs:comment "The date and time at which the facility state is no longer in effect." ;
+  rdfs:comment "\"format\": \"date-time\"" ;
+  rdfs:domain osdu:AbstractAliasNames ;
+  rdfs:domain osdu:AbstractFacilityEvent ;
+  rdfs:domain osdu:AbstractFacilityOperator ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:domain osdu:AbstractFacilityState ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:AbstractWellboreDrillingReason ;
+  rdfs:range xsd:string ;
+.
+osdu:ToolStringDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment "Tool String Description - a long concatenation of the tools used for logging services such as GammaRay+NeutronPorosity" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:TopDepth
+  a owl:DatatypeProperty ;
+  rdfs:comment "UOM_via_property:DepthUnit" ;
+  rdfs:domain osdu:Curves ;
+  rdfs:range xsd:decimal ;
+.
+osdu:TopMeasuredDepth
+  a owl:DatatypeProperty ;
+  rdfs:comment "OSDU Native Top Measured Depth of the Well Log." ;
+  rdfs:comment "UOM:length" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:decimal ;
+.
+osdu:TotalSize
+  a owl:DatatypeProperty ;
+  rdfs:comment "Total size of the dataset in bytes; for files it is the same as declared in FileSourceInfo.FileSize or the sum of all individual files. Implemented as string. The value must be convertible to a long integer (sizes can become very large)." ;
+  rdfs:comment "\"format\": \"integer\"" ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[0-9]+$" ;
+.
+osdu:TrajectoryTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Describes the predominant shapes the wellbore path can follow if deviated from vertical. Sample Values: Horizontal, Vertical, Directional." ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-WellboreTrajectoryType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:WellboreTrajectoryType ;
+.
+osdu:Type
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+osdu:UnitDimension
+  a owl:DatatypeProperty ;
+  rdfs:comment "The UnitQuantity dimensionality using the symbols for dimension as defined in https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf, i.e. L for length, M for mass, T for time, I for electric current, N for amount of substance, J for luminous intensity; except \\u0398 for thermodynamic temperature, which is replaced by the symbol K, the additional symbol D for temperature difference and the additional symbol 0 for no dimension." ;
+  rdfs:domain osdu:UnitQuantity ;
+  rdfs:range xsd:string ;
+.
+osdu:UnitDimensionCode
+  a owl:DatatypeProperty ;
+  rdfs:comment "The dimensionality using the symbols for dimension as defined in https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf, i.e. L for length, M for mass, T for time, I for electric current, N for amount of substance, J for luminous intensity; except \\u0398 for thermodynamic temperature, which is replaced by the symbol K, the additional symbol D for temperature difference and the additional symbol 0 for no dimension." ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:string ;
+.
+osdu:UnitDimensionName
+  a owl:DatatypeProperty ;
+  rdfs:comment "The name of the unit dimension concept." ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:string ;
+.
+osdu:UnitOfMeasure
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:UnitOfMeasureID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The unit for the quantity parameter, like metre (m in SI units system) for quantity Length." ;
+  rdfs:domain osdu:AbstractFacilitySpecification ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:UnitOfMeasure ;
+.
+osdu:UnitQuantity
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:UnitQuantityID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Unit Quantity is a semantic description of the quantity the UoM is describing ('length' for instance)" ;
+  rdfs:domain osdu:UnitOfMeasure ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitQuantity:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:UnitQuantity ;
+.
+osdu:VersionCreationReason
+  a owl:DatatypeProperty ;
+  rdfs:comment "This describes the reason that caused the creation of a new version of this master data." ;
+  rdfs:domain osdu:AbstractMaster ;
+  rdfs:range xsd:string ;
+.
+osdu:VerticalCRSID
+  a owl:DatatypeProperty ;
+  rdfs:comment "A vertical coordinate reference system defines the origin for height or depth values. It is expected that either VerticalCRSID or VerticalReferenceID reference is provided in a given vertical measurement array object, but not both." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:CoordinateReferenceSystem ;
+.
+osdu:VerticalMeasurement
+  a owl:DatatypeProperty ;
+  rdfs:comment "The value of the elevation or depth. Depth is positive downwards from a vertical reference or geodetic datum along a path, which can be vertical; elevation is positive upwards from a geodetic datum along a vertical path. Either can be negative." ;
+  rdfs:comment "UOM_via_property:VerticalMeasurementUnitOfMeasureID" ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:range xsd:decimal ;
+.
+osdu:VerticalMeasurementDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment "Text which describes a vertical measurement in detail." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:range xsd:string ;
+.
+osdu:VerticalMeasurementID
+  a owl:DatatypeProperty ;
+  rdfs:comment "References an entry in the Vertical Measurement array for the Wellbore identified by WellboreID, which defines the vertical reference datum for all curve measured depths." ;
+  rdfs:comment "The ID for a distinct vertical measurement within the Wellbore VerticalMeasurements array so that it may be referenced by other vertical measurements if necessary." ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+.
+osdu:VerticalMeasurementPath
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:VerticalMeasurementPathID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies Measured Depth, True Vertical Depth, or Elevation." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementPath:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:VerticalMeasurementPath ;
+.
+osdu:VerticalMeasurementSource
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:VerticalMeasurementSourceID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies Driller vs Logger." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementSource:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:VerticalMeasurementSource ;
+.
+osdu:VerticalMeasurementType
+  a owl:Class ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:VerticalMeasurementTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies the type of vertical measurement (TD, Plugback, Kickoff, Drill Floor, Rotary Table...)." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:VerticalMeasurementType ;
+.
+osdu:VerticalMeasurementUnitOfMeasureID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The unit of measure for the vertical measurement. If a unit of measure and a vertical CRS are provided, the unit of measure provided is taken over the unit of measure from the CRS." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:domain osdu:VerticalMeasurements ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:UnitOfMeasure ;
+.
+osdu:VerticalMeasurements
+  a owl:Class ;
+  rdfs:comment "List of all depths and elevations pertaining to the well, like, water depth, mud line elevation, etc." ;
+  rdfs:comment "List of all depths and elevations pertaining to the wellbore, like, plug back measured depth, total measured depth, KB elevation" ;
+  rdfs:comment "References an entry in the Vertical Measurement array for the Wellbore identified by WellboreID, which defines the vertical reference datum for the logged depths." ;
+  rdfs:subClassOf osdu:AbstractFacilityVerticalMeasurement ;
+.
+osdu:VerticalReferenceID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The reference point from which the relative vertical measurement is made. This is only populated if the measurement has no VerticalCRSID specified. The value entered must be the VerticalMeasurementID for another vertical measurement array element in this resource or its parent facility, and as a chain of measurements, they must resolve ultimately to a Vertical CRS. It is expected that a VerticalCRSID or a VerticalReferenceID is provided in a given vertical measurement array object, but not both." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:range xsd:string ;
+.
+osdu:Viewers
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:ACL ;
+  rdfs:range xsd:string ;
+.
+osdu:Well
+  a owl:Class ;
+  rdfs:comment "The origin of a set of wellbores." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractFacility ;
+  rdfs:subClassOf osdu:AbstractMaster ;
+  rdfs:subClassOf osdu:MasterData ;
+.
+osdu:WellID
+  a owl:DatatypeProperty ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Well:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Well ;
+.
+osdu:WellInterestType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:WellLog
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractWPCGroupType ;
+  rdfs:subClassOf osdu:AbstractWorkProductComponent ;
+  rdfs:subClassOf osdu:WorkProductComponent ;
+.
+osdu:WellLogTypeID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Well Log Type short Description such as Raw; Evaluated; Composite;...." ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:LogType ;
+.
+osdu:Wellbore
+  a owl:Class ;
+  rdfs:comment "\"A hole in the ground extending from a point at the earth's surface to the maximum point of penetration." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractMaster ;
+  rdfs:subClassOf osdu:MasterData ;
+.
+osdu:WellboreID
+  a owl:DatatypeProperty ;
+  rdfs:comment "The Wellbore where the Well Log Work Product Component was recorded" ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Wellbore:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:Wellbore ;
+.
+osdu:WellboreTVDTrajectoryID
+  a owl:DatatypeProperty ;
+  rdfs:comment "Specifies what directional survey or wellpath was used to calculate the TVD." ;
+  rdfs:domain osdu:AbstractFacilityVerticalMeasurement ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:work-product-component\\\\-\\\\-WellboreTrajectory:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" ;
+  owl:allValuesFrom osdu:WellboreTrajectory ;
+.
+osdu:WellboreTrajectory
+  a owl:Class ;
+  rdfs:comment "Work Product Component describing an individual instance of a wellbore trajectory data object. Also called a deviation survey, wellbore trajectory is data that is used to calculate the position and spatial uncertainty of a planned or actual wellbore in 2-dimensional and 3-dimensional space." ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractWPCGroupType ;
+  rdfs:subClassOf osdu:AbstractWorkProductComponent ;
+  rdfs:subClassOf osdu:WorkProductComponent ;
+.
+osdu:WellboreTrajectoryType
+  a owl:Class ;
+  rdfs:subClassOf osdu:AbstractCommonResources ;
+  rdfs:subClassOf osdu:AbstractReferenceType ;
+  rdfs:subClassOf osdu:RefrenceData ;
+.
+osdu:WorkProductComponent
+  a owl:Class ;
+  rdfs:subClassOf osdu:System ;
+.
+osdu:belongsToWell
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range osdu:Well ;
+.
+osdu:belongsToWellbore
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range osdu:Wellbore ;
+.
+osdu:createTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "Timestamp of the time at which initial version of this OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC. Format: date-time Example: \"2020-12-16T11:46:20.163Z\"" ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:createUser
+  a owl:DatatypeProperty ;
+  rdfs:comment "The user reference, which created the first version of this resource object. Set by the System." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:hasACL
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:System ;
+  rdfs:range osdu:ACL ;
+.
+osdu:hasAncestry
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:System ;
+  rdfs:range osdu:Ancestry ;
+.
+osdu:hasArtefacts
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractWPCGroupType ;
+  rdfs:range osdu:Artefacts ;
+.
+osdu:hasBusinessRules
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:DataQuality ;
+  rdfs:range osdu:BusinessRules ;
+.
+osdu:hasCurves
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range osdu:Curves ;
+.
+osdu:hasDatasetProperties
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractDataset ;
+  rdfs:domain osdu:AbstractFile ;
+  rdfs:domain osdu:AbstractFileCollection ;
+  rdfs:range osdu:DatasetProperties ;
+.
+osdu:hasDrillingReasons
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range osdu:DrillingReasons ;
+.
+osdu:hasExtensionProperties
+  a owl:ObjectProperty ;
+  rdfs:domain <http://OSDU_Ontology/OSDU#File.Generic> ;
+  rdfs:range osdu:ExtensionProperties ;
+.
+osdu:hasFacilityEvents
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range osdu:FacilityEvents ;
+.
+osdu:hasFacilityNameAliases
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range osdu:FacilityNameAliases ;
+.
+osdu:hasFacilityOperators
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range osdu:FacilityOperators ;
+.
+osdu:hasFacilitySpecifications
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range osdu:FacilitySpecifications ;
+.
+osdu:hasFacilityStates
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractFacility ;
+  rdfs:range osdu:FacilityStates ;
+.
+osdu:hasFileSourceInfos
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:DatasetProperties ;
+  rdfs:range osdu:FileSourceInfos ;
+.
+osdu:hasGeoContexts
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractMaster ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range osdu:GeoContexts ;
+.
+osdu:hasGeographicBottomHoleLocation
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range osdu:GeographicBottomHoleLocation ;
+.
+osdu:hasLegal
+  a owl:ObjectProperty ;
+  rdfs:comment "The entity's legal tags and compliance status. The actual contents associated with the legal tags is managed by the Compliance Service." ;
+  rdfs:domain osdu:System ;
+  rdfs:range osdu:Legal ;
+.
+osdu:hasLineageAssertions
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range osdu:LineageAssertions ;
+.
+osdu:hasLogServiceDateInterval
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:WellLog ;
+  rdfs:range osdu:LogServiceDateInterval ;
+.
+osdu:hasMeta
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:System ;
+  rdfs:range osdu:Meta ;
+.
+osdu:hasNameAlias
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractReferenceType ;
+  rdfs:range osdu:NameAlias ;
+.
+osdu:hasNameAliases
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractMaster ;
+  rdfs:range osdu:NameAliases ;
+.
+osdu:hasOrganisationNameAliases
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:Organisation ;
+  rdfs:range osdu:OrganisationNameAliases ;
+.
+osdu:hasProjectedBottomHoleLocation
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:Wellbore ;
+  rdfs:range osdu:ProjectedBottomHoleLocation ;
+.
+osdu:hasQualityMetric
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:DataQuality ;
+  rdfs:range osdu:QualityMetric ;
+.
+osdu:hasSpatialArea
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range osdu:SpatialArea ;
+.
+osdu:hasSpatialLocation
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractMaster ;
+  rdfs:range osdu:SpatialLocation ;
+.
+osdu:hasSpatialPoint
+  a owl:ObjectProperty ;
+  rdfs:domain osdu:AbstractWorkProductComponent ;
+  rdfs:range osdu:SpatialPoint ;
+.
+osdu:hasVerticalMeasurement
+  a owl:ObjectProperty ;
+  rdfs:domain [
+      a owl:Class ;
+      owl:unionOf (
+          osdu:Well
+          osdu:Wellbore
+          osdu:WellLog
+        ) ;
+    ] ;
+  rdfs:range osdu:VerticalMeasurements ;
+.
+osdu:id
+  a owl:DatatypeProperty ;
+  rdfs:comment "Previously called ResourceID or SRN which identifies this OSDU resource object without version." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+$" ;
+.
+osdu:kind
+  a owl:DatatypeProperty ;
+  rdfs:comment "he schema identification for the OSDU resource object following the pattern {Namespace}:{Source}:{Type}:{VersionMajor}.{VersionMinor}.{VersionPatch}. The versioning scheme follows the semantic versioning, https://semver.org/." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[0-9]+.[0-9]+.[0-9]+$" ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:legaltags
+  a owl:DatatypeProperty ;
+  rdfs:comment "The list of legal tags, which resolve to legal properties (like country of origin, export classification code, etc.) and rules with the help of the Compliance Service." ;
+  rdfs:domain osdu:AbstractLegalTags ;
+  rdfs:range xsd:string ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:modifyTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "Timestamp of the time at which this version of the OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC. Format: date-time. Example: \"2020-12-16T11:52:24.477Z\"" ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:modifyUser
+  a owl:DatatypeProperty ;
+  rdfs:comment "The user reference, which created this version of this resource object. Set by the System." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:owners
+  a owl:DatatypeProperty ;
+  rdfs:comment "The list of owners of this data record formatted as an email (core.common.model.storage.validation.ValidationDoc.EMAIL_REGEX)." ;
+  rdfs:domain osdu:AbstractAccessControlList ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[a-zA-Z0-9_+&*-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$" ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
+osdu:parents
+  a owl:DatatypeProperty ;
+  rdfs:comment "An array of none, one or many entity references in the data ecosystem, which identify the source of data in the legal sense. In contract to other relationships, the source record version is required. Example: the 'parents' will be queried when e.g. the subscription of source data services is terminated; access to the derivatives is also terminated." ;
+  rdfs:domain osdu:AbstractLegalParentList ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]+$" ;
+.
+osdu:status
+  a owl:DatatypeProperty ;
+  rdfs:comment "The legal status. Set by the system after evaluation against the compliance rules associated with the \\\"legaltags\\\" using the Compliance Service." ;
+  rdfs:domain osdu:AbstractLegalTags ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^(compliant|uncompliant)$" ;
+.
+osdu:tags
+  a owl:DatatypeProperty ;
+  rdfs:comment "A generic dictionary of string keys mapping to string value. Only strings are permitted as keys and values." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:version
+  a owl:DatatypeProperty ;
+  rdfs:comment "The version number of this OSDU resource; set by the framework." ;
+  rdfs:domain osdu:System ;
+  rdfs:range xsd:string ;
+.
+osdu:viewers
+  a owl:DatatypeProperty ;
+  rdfs:comment "The list of viewers to which this data record is accessible/visible/discoverable formatted as an email (core.common.model.storage.validation.ValidationDoc.EMAIL_REGEX)." ;
+  rdfs:domain osdu:AbstractAccessControlList ;
+  rdfs:range xsd:string ;
+  xsd:pattern "^[a-zA-Z0-9_+&*-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$" ;
+  owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+.
