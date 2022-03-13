@@ -6,9 +6,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix osdu: <https://w3id.org/OSDU#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://OSDU_Ontology/OSDU#> .
+@base <https://w3id.org/OSDU#> .
 
-<http://OSDU_Ontology/OSDU#> rdf:type owl:Ontology ;
+<https://w3id.org/OSDU#> rdf:type owl:Ontology ;
                               owl:versionInfo "Created with TopBraid Composer" .
 
 #################################################################
@@ -27,49 +27,49 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://OSDU_Ontology/OSDU#belongsToWell
+###  https://w3id.org/OSDU#belongsToWell
 :belongsToWell rdf:type owl:ObjectProperty ;
                rdfs:domain :Wellbore ;
                rdfs:range :Well .
 
 
-###  http://OSDU_Ontology/OSDU#belongsToWellbore
+###  https://w3id.org/OSDU#belongsToWellbore
 :belongsToWellbore rdf:type owl:ObjectProperty ;
                    rdfs:domain :WellLog ;
                    rdfs:range :Wellbore .
 
 
-###  http://OSDU_Ontology/OSDU#hasACL
+###  https://w3id.org/OSDU#hasACL
 :hasACL rdf:type owl:ObjectProperty ;
         rdfs:domain :System ;
         rdfs:range :ACL .
 
 
-###  http://OSDU_Ontology/OSDU#hasAncestry
+###  https://w3id.org/OSDU#hasAncestry
 :hasAncestry rdf:type owl:ObjectProperty ;
              rdfs:domain :System ;
              rdfs:range :Ancestry .
 
 
-###  http://OSDU_Ontology/OSDU#hasArtefacts
+###  https://w3id.org/OSDU#hasArtefacts
 :hasArtefacts rdf:type owl:ObjectProperty ;
               rdfs:domain :AbstractWPCGroupType ;
               rdfs:range :Artefacts .
 
 
-###  http://OSDU_Ontology/OSDU#hasBusinessRules
+###  https://w3id.org/OSDU#hasBusinessRules
 :hasBusinessRules rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataQuality ;
                   rdfs:range :BusinessRules .
 
 
-###  http://OSDU_Ontology/OSDU#hasCurves
+###  https://w3id.org/OSDU#hasCurves
 :hasCurves rdf:type owl:ObjectProperty ;
            rdfs:domain :WellLog ;
            rdfs:range :Curves .
 
 
-###  http://OSDU_Ontology/OSDU#hasDatasetProperties
+###  https://w3id.org/OSDU#hasDatasetProperties
 :hasDatasetProperties rdf:type owl:ObjectProperty ;
                       rdfs:domain :AbstractDataset ,
                                   :AbstractFile ,
@@ -77,141 +77,141 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       rdfs:range :DatasetProperties .
 
 
-###  http://OSDU_Ontology/OSDU#hasDrillingReasons
+###  https://w3id.org/OSDU#hasDrillingReasons
 :hasDrillingReasons rdf:type owl:ObjectProperty ;
                     rdfs:domain :Wellbore ;
                     rdfs:range :DrillingReasons .
 
 
-###  http://OSDU_Ontology/OSDU#hasExtensionProperties
+###  https://w3id.org/OSDU#hasExtensionProperties
 :hasExtensionProperties rdf:type owl:ObjectProperty ;
                         rdfs:domain :File.Generic ;
                         rdfs:range :ExtensionProperties .
 
 
-###  http://OSDU_Ontology/OSDU#hasFacilityEvents
+###  https://w3id.org/OSDU#hasFacilityEvents
 :hasFacilityEvents rdf:type owl:ObjectProperty ;
                    rdfs:domain :AbstractFacility ;
                    rdfs:range :FacilityEvents .
 
 
-###  http://OSDU_Ontology/OSDU#hasFacilityNameAliases
+###  https://w3id.org/OSDU#hasFacilityNameAliases
 :hasFacilityNameAliases rdf:type owl:ObjectProperty ;
                         rdfs:domain :AbstractFacility ;
                         rdfs:range :FacilityNameAliases .
 
 
-###  http://OSDU_Ontology/OSDU#hasFacilityOperators
+###  https://w3id.org/OSDU#hasFacilityOperators
 :hasFacilityOperators rdf:type owl:ObjectProperty ;
                       rdfs:domain :AbstractFacility ;
                       rdfs:range :FacilityOperators .
 
 
-###  http://OSDU_Ontology/OSDU#hasFacilitySpecifications
+###  https://w3id.org/OSDU#hasFacilitySpecifications
 :hasFacilitySpecifications rdf:type owl:ObjectProperty ;
                            rdfs:domain :AbstractFacility ;
                            rdfs:range :FacilitySpecifications .
 
 
-###  http://OSDU_Ontology/OSDU#hasFacilityStates
+###  https://w3id.org/OSDU#hasFacilityStates
 :hasFacilityStates rdf:type owl:ObjectProperty ;
                    rdfs:domain :AbstractFacility ;
                    rdfs:range :FacilityStates .
 
 
-###  http://OSDU_Ontology/OSDU#hasFileSourceInfos
+###  https://w3id.org/OSDU#hasFileSourceInfos
 :hasFileSourceInfos rdf:type owl:ObjectProperty ;
                     rdfs:domain :DatasetProperties ;
                     rdfs:range :FileSourceInfos .
 
 
-###  http://OSDU_Ontology/OSDU#hasGeoContexts
+###  https://w3id.org/OSDU#hasGeoContexts
 :hasGeoContexts rdf:type owl:ObjectProperty ;
                 rdfs:domain :AbstractMaster ,
                             :AbstractWorkProductComponent ;
                 rdfs:range :GeoContexts .
 
 
-###  http://OSDU_Ontology/OSDU#hasGeographicBottomHoleLocation
+###  https://w3id.org/OSDU#hasGeographicBottomHoleLocation
 :hasGeographicBottomHoleLocation rdf:type owl:ObjectProperty ;
                                  rdfs:domain :Wellbore ;
                                  rdfs:range :GeographicBottomHoleLocation .
 
 
-###  http://OSDU_Ontology/OSDU#hasLegal
+###  https://w3id.org/OSDU#hasLegal
 :hasLegal rdf:type owl:ObjectProperty ;
           rdfs:domain :System ;
           rdfs:range :Legal ;
           rdfs:comment "The entity's legal tags and compliance status. The actual contents associated with the legal tags is managed by the Compliance Service." .
 
 
-###  http://OSDU_Ontology/OSDU#hasLineageAssertions
+###  https://w3id.org/OSDU#hasLineageAssertions
 :hasLineageAssertions rdf:type owl:ObjectProperty ;
                       rdfs:domain :AbstractWorkProductComponent ;
                       rdfs:range :LineageAssertions .
 
 
-###  http://OSDU_Ontology/OSDU#hasLogServiceDateInterval
+###  https://w3id.org/OSDU#hasLogServiceDateInterval
 :hasLogServiceDateInterval rdf:type owl:ObjectProperty ;
                            rdfs:domain :WellLog ;
                            rdfs:range :LogServiceDateInterval .
 
 
-###  http://OSDU_Ontology/OSDU#hasMeta
+###  https://w3id.org/OSDU#hasMeta
 :hasMeta rdf:type owl:ObjectProperty ;
          rdfs:domain :System ;
          rdfs:range :Meta .
 
 
-###  http://OSDU_Ontology/OSDU#hasNameAlias
+###  https://w3id.org/OSDU#hasNameAlias
 :hasNameAlias rdf:type owl:ObjectProperty ;
               rdfs:domain :AbstractReferenceType ;
               rdfs:range :NameAlias .
 
 
-###  http://OSDU_Ontology/OSDU#hasNameAliases
+###  https://w3id.org/OSDU#hasNameAliases
 :hasNameAliases rdf:type owl:ObjectProperty ;
                 rdfs:domain :AbstractMaster ;
                 rdfs:range :NameAliases .
 
 
-###  http://OSDU_Ontology/OSDU#hasOrganisationNameAliases
+###  https://w3id.org/OSDU#hasOrganisationNameAliases
 :hasOrganisationNameAliases rdf:type owl:ObjectProperty ;
                             rdfs:domain :Organisation ;
                             rdfs:range :OrganisationNameAliases .
 
 
-###  http://OSDU_Ontology/OSDU#hasProjectedBottomHoleLocation
+###  https://w3id.org/OSDU#hasProjectedBottomHoleLocation
 :hasProjectedBottomHoleLocation rdf:type owl:ObjectProperty ;
                                 rdfs:domain :Wellbore ;
                                 rdfs:range :ProjectedBottomHoleLocation .
 
 
-###  http://OSDU_Ontology/OSDU#hasQualityMetric
+###  https://w3id.org/OSDU#hasQualityMetric
 :hasQualityMetric rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataQuality ;
                   rdfs:range :QualityMetric .
 
 
-###  http://OSDU_Ontology/OSDU#hasSpatialArea
+###  https://w3id.org/OSDU#hasSpatialArea
 :hasSpatialArea rdf:type owl:ObjectProperty ;
                 rdfs:domain :AbstractWorkProductComponent ;
                 rdfs:range :SpatialArea .
 
 
-###  http://OSDU_Ontology/OSDU#hasSpatialLocation
+###  https://w3id.org/OSDU#hasSpatialLocation
 :hasSpatialLocation rdf:type owl:ObjectProperty ;
                     rdfs:domain :AbstractMaster ;
                     rdfs:range :SpatialLocation .
 
 
-###  http://OSDU_Ontology/OSDU#hasSpatialPoint
+###  https://w3id.org/OSDU#hasSpatialPoint
 :hasSpatialPoint rdf:type owl:ObjectProperty ;
                  rdfs:domain :AbstractWorkProductComponent ;
                  rdfs:range :SpatialPoint .
 
 
-###  http://OSDU_Ontology/OSDU#hasVerticalMeasurement
+###  https://w3id.org/OSDU#hasVerticalMeasurement
 :hasVerticalMeasurement rdf:type owl:ObjectProperty ;
                         rdfs:domain [ rdf:type owl:Class ;
                                       owl:unionOf ( :Well
@@ -226,21 +226,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://OSDU_Ontology/OSDU#ActivityType
+###  https://w3id.org/OSDU#ActivityType
 :ActivityType rdf:type owl:DatatypeProperty ;
               rdfs:domain :WellLog ;
               rdfs:range xsd:string ;
               rdfs:comment "General method or circumstance of logging - MWD, completion, ..." .
 
 
-###  http://OSDU_Ontology/OSDU#AliasName
+###  https://w3id.org/OSDU#AliasName
 :AliasName rdf:type owl:DatatypeProperty ;
            rdfs:domain :AbstractAliasNames ;
            rdfs:range xsd:string ;
            rdfs:comment "Alternative Name value of defined name type for an object." .
 
 
-###  http://OSDU_Ontology/OSDU#AliasNameTypeID
+###  https://w3id.org/OSDU#AliasNameTypeID
 :AliasNameTypeID rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AbstractAliasNames ;
                  rdfs:range xsd:string ;
@@ -248,49 +248,49 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-AliasNameType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#AttributionAuthority
+###  https://w3id.org/OSDU#AttributionAuthority
 :AttributionAuthority rdf:type owl:DatatypeProperty ;
                       rdfs:domain :AbstractReferenceType ;
                       rdfs:range xsd:string ;
                       rdfs:comment "Name of the authority, or organisation, which governs the entity value and from which it is sourced." .
 
 
-###  http://OSDU_Ontology/OSDU#AttributionPublication
+###  https://w3id.org/OSDU#AttributionPublication
 :AttributionPublication rdf:type owl:DatatypeProperty ;
                         rdfs:domain :AbstractReferenceType ;
                         rdfs:range xsd:string ;
                         rdfs:comment "The distinct instance of the attribution publication, by version number, sequence number, date of publication, etc., that was used for the entity value." .
 
 
-###  http://OSDU_Ontology/OSDU#AttributionRevision
+###  https://w3id.org/OSDU#AttributionRevision
 :AttributionRevision rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractReferenceType ;
                      rdfs:range xsd:string ;
                      rdfs:comment "The distinct instance of the attribution publication, by version number, sequence number, date of publication, etc., that was used for the entity value." .
 
 
-###  http://OSDU_Ontology/OSDU#AuthorIDs
+###  https://w3id.org/OSDU#AuthorIDs
 :AuthorIDs rdf:type owl:DatatypeProperty ;
            rdfs:domain :AbstractWorkProductComponent ;
            rdfs:range xsd:string ;
            rdfs:comment "Array of Authors' names of the work product component.  Could be a person or company entity." .
 
 
-###  http://OSDU_Ontology/OSDU#BaseDepth
+###  https://w3id.org/OSDU#BaseDepth
 :BaseDepth rdf:type owl:DatatypeProperty ;
            rdfs:domain :Curves ;
            rdfs:range xsd:decimal ;
            rdfs:comment "UOM_via_property:DepthUnit" .
 
 
-###  http://OSDU_Ontology/OSDU#BaseForConversion
+###  https://w3id.org/OSDU#BaseForConversion
 :BaseForConversion rdf:type owl:DatatypeProperty ;
                    rdfs:domain :UnitQuantity ;
                    rdfs:range xsd:string ;
                    rdfs:comment "The base unit for unit conversion. The symbol of the unit which is used for conversion for of all members of this class. The corresponding baseForConversion must be a member of this class. To convert from one member to another member, you logically convert from the source member to the base and then convert from the base to the target member." .
 
 
-###  http://OSDU_Ontology/OSDU#BasinID
+###  https://w3id.org/OSDU#BasinID
 :BasinID rdf:type owl:DatatypeProperty ;
          rdfs:domain :AbstractGeoBasinContext ;
          rdfs:range xsd:string ;
@@ -298,7 +298,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
          xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Basin:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#BottomMeasuredDepth
+###  https://w3id.org/OSDU#BottomMeasuredDepth
 :BottomMeasuredDepth rdf:type owl:DatatypeProperty ;
                      rdfs:domain :WellLog ;
                      rdfs:range xsd:decimal ;
@@ -306,14 +306,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                   "UOM:length" .
 
 
-###  http://OSDU_Ontology/OSDU#BusinessActivities
+###  https://w3id.org/OSDU#BusinessActivities
 :BusinessActivities rdf:type owl:DatatypeProperty ;
                     rdfs:domain :AbstractWorkProductComponent ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Array of business processes/workflows that the work product component has been through (ex. well planning, exploration)." .
 
 
-###  http://OSDU_Ontology/OSDU#Checksum
+###  https://w3id.org/OSDU#Checksum
 :Checksum rdf:type owl:DatatypeProperty ;
           rdfs:domain :AbstractFile ,
                       :AbstractFileCollection ;
@@ -322,42 +322,42 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
           xsd:pattern "^[0-9a-fA-F]{32}" .
 
 
-###  http://OSDU_Ontology/OSDU#Code
+###  https://w3id.org/OSDU#Code
 :Code rdf:type owl:DatatypeProperty ;
       rdfs:domain :AbstractReferenceType ;
       rdfs:range xsd:string ;
       rdfs:comment "The abbreviation or mnemonic for a reference type if defined. Example: WELL and WLBR." .
 
 
-###  http://OSDU_Ontology/OSDU#CoefficientA
+###  https://w3id.org/OSDU#CoefficientA
 :CoefficientA rdf:type owl:DatatypeProperty ;
               rdfs:domain :UnitOfMeasure ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The A parameter; formula: y = (A+B*x)/(C+D*x)" .
 
 
-###  http://OSDU_Ontology/OSDU#CoefficientB
+###  https://w3id.org/OSDU#CoefficientB
 :CoefficientB rdf:type owl:DatatypeProperty ;
               rdfs:domain :UnitOfMeasure ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The B parameter; formula: y = (A+B*x)/(C+D*x)" .
 
 
-###  http://OSDU_Ontology/OSDU#CoefficientC
+###  https://w3id.org/OSDU#CoefficientC
 :CoefficientC rdf:type owl:DatatypeProperty ;
               rdfs:domain :UnitOfMeasure ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The C parameter; formula: y = (A+B*x)/(C+D*x)" .
 
 
-###  http://OSDU_Ontology/OSDU#CoefficientD
+###  https://w3id.org/OSDU#CoefficientD
 :CoefficientD rdf:type owl:DatatypeProperty ;
               rdfs:domain :UnitOfMeasure ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The D parameter; formula: y = (A+B*x)/(C+D*x)" .
 
 
-###  http://OSDU_Ontology/OSDU#CreationDateTime
+###  https://w3id.org/OSDU#CreationDateTime
 :CreationDateTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain :AbstractWorkProductComponent ;
                   rdfs:range xsd:string ;
@@ -365,7 +365,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                "Date that a resource (work  product component here) is formed outside of OSDU before loading (e.g. publication date)." .
 
 
-###  http://OSDU_Ontology/OSDU#CurrentOperatorID
+###  https://w3id.org/OSDU#CurrentOperatorID
 :CurrentOperatorID rdf:type owl:DatatypeProperty ;
                    rdfs:domain :AbstractFacility ;
                    rdfs:range xsd:string ;
@@ -373,21 +373,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#CurveID
+###  https://w3id.org/OSDU#CurveID
 :CurveID rdf:type owl:DatatypeProperty ;
          rdfs:domain :Curves ;
          rdfs:range xsd:string ;
          rdfs:comment "The ID of the Well Log Curve" .
 
 
-###  http://OSDU_Ontology/OSDU#CurveQuality
+###  https://w3id.org/OSDU#CurveQuality
 :CurveQuality rdf:type owl:DatatypeProperty ;
               rdfs:domain :Curves ;
               rdfs:range xsd:string ;
               rdfs:comment "The Quality of the Log Curve." .
 
 
-###  http://OSDU_Ontology/OSDU#CurveUnit
+###  https://w3id.org/OSDU#CurveUnit
 :CurveUnit rdf:type owl:DatatypeProperty ;
            rdfs:domain :Curves ;
            rdfs:range xsd:string ;
@@ -395,14 +395,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
            xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#CurveVersion
+###  https://w3id.org/OSDU#CurveVersion
 :CurveVersion rdf:type owl:DatatypeProperty ;
               rdfs:domain :Curves ;
               rdfs:range xsd:string ;
               rdfs:comment "The Version of the Log Curve." .
 
 
-###  http://OSDU_Ontology/OSDU#DataSourceOrganisationID
+###  https://w3id.org/OSDU#DataSourceOrganisationID
 :DataSourceOrganisationID rdf:type owl:DatatypeProperty ;
                           rdfs:domain :AbstractFacility ;
                           rdfs:range xsd:string ;
@@ -410,7 +410,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#Datasets
+###  https://w3id.org/OSDU#Datasets
 :Datasets rdf:type owl:DatatypeProperty ;
           rdfs:domain :AbstractWPCGroupType ;
           rdfs:range xsd:string ;
@@ -419,7 +419,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
           xsd:pattern "^[\\\\w\\\\-\\\\.]+:dataset\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#DateStamp
+###  https://w3id.org/OSDU#DateStamp
 :DateStamp rdf:type owl:DatatypeProperty ;
            rdfs:domain :Curves ;
            rdfs:range xsd:string ;
@@ -427,7 +427,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                         "Date curve was created in the database. \"format\": \"date-time\"" .
 
 
-###  http://OSDU_Ontology/OSDU#DefaultVerticalCRSID
+###  https://w3id.org/OSDU#DefaultVerticalCRSID
 :DefaultVerticalCRSID rdf:type owl:DatatypeProperty ;
                       rdfs:domain :Well ;
                       rdfs:range xsd:string ;
@@ -435,7 +435,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#DefaultVerticalMeasurementID
+###  https://w3id.org/OSDU#DefaultVerticalMeasurementID
 :DefaultVerticalMeasurementID rdf:type owl:DatatypeProperty ;
                               rdfs:domain [ rdf:type owl:Class ;
                                             owl:unionOf ( :Well
@@ -447,7 +447,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                            "The default datum reference point, or zero depth point, used to determine other points vertically in a wellbore.  References an entry in the Vertical Measurements array of this wellbore." .
 
 
-###  http://OSDU_Ontology/OSDU#DefinitionOrganisationID
+###  https://w3id.org/OSDU#DefinitionOrganisationID
 :DefinitionOrganisationID rdf:type owl:DatatypeProperty ;
                           rdfs:domain :AbstractAliasNames ;
                           rdfs:range xsd:string ;
@@ -455,7 +455,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           xsd:pattern "^[\\\\w\\\\-\\\\.]+:(reference-data\\\\-\\\\-StandardsOrganisation|master-data\\\\-\\\\-Organisation):[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#DefinitiveTrajectoryID
+###  https://w3id.org/OSDU#DefinitiveTrajectoryID
 :DefinitiveTrajectoryID rdf:type owl:DatatypeProperty ;
                         rdfs:domain :Wellbore ;
                         rdfs:range xsd:string ;
@@ -463,7 +463,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                         xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-GeologicalFormation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#DepthCoding
+###  https://w3id.org/OSDU#DepthCoding
 :DepthCoding rdf:type owl:DatatypeProperty ;
              rdfs:domain :Curves ;
              rdfs:range xsd:string ;
@@ -471,7 +471,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
              xsd:pattern "^REGULAR|DISCRETE$" .
 
 
-###  http://OSDU_Ontology/OSDU#DepthUnit
+###  https://w3id.org/OSDU#DepthUnit
 :DepthUnit rdf:type owl:DatatypeProperty ;
            rdfs:domain :Curves ;
            rdfs:range xsd:string ;
@@ -479,7 +479,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
            xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#Description
+###  https://w3id.org/OSDU#Description
 :Description rdf:type owl:DatatypeProperty ;
              rdfs:domain :AbstractDataset ,
                          :AbstractReferenceType ,
@@ -490,14 +490,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           "The text which describes a NAME TYPE in detail." .
 
 
-###  http://OSDU_Ontology/OSDU#DrillingFluidProperty
+###  https://w3id.org/OSDU#DrillingFluidProperty
 :DrillingFluidProperty rdf:type owl:DatatypeProperty ;
                        rdfs:domain :WellLog ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Type of mud at time of logging (oil, water based,...)" .
 
 
-###  http://OSDU_Ontology/OSDU#DrillingReasonTypeID
+###  https://w3id.org/OSDU#DrillingReasonTypeID
 :DrillingReasonTypeID rdf:type owl:DatatypeProperty ;
                       rdfs:domain :AbstractWellboreDrillingReason ;
                       rdfs:range xsd:string ;
@@ -505,14 +505,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-DrillingReasonType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#EffectiveDate
+###  https://w3id.org/OSDU#EffectiveDate
 :EffectiveDate rdf:type owl:DatatypeProperty ;
                rdfs:domain :Organisation ;
                rdfs:range xsd:string ;
                rdfs:comment "The date and time at which a given organisation becomes effective." .
 
 
-###  http://OSDU_Ontology/OSDU#EffectiveDateTime
+###  https://w3id.org/OSDU#EffectiveDateTime
 :EffectiveDateTime rdf:type owl:DatatypeProperty ;
                    rdfs:domain :AbstractAliasNames ,
                                :AbstractFacilityEvent ,
@@ -532,7 +532,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                 "The date and time when an alias name becomes effective." .
 
 
-###  http://OSDU_Ontology/OSDU#EncodingFormatTypeID
+###  https://w3id.org/OSDU#EncodingFormatTypeID
 :EncodingFormatTypeID rdf:type owl:DatatypeProperty ;
                       rdfs:domain :AbstractDataset ,
                                   :AbstractFileSourceInfo ;
@@ -542,20 +542,20 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-EncodingFormatType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#EndDate
+###  https://w3id.org/OSDU#EndDate
 :EndDate rdf:type owl:DatatypeProperty ;
          rdfs:domain :LogServiceDateInterval ;
          rdfs:range xsd:string ;
          rdfs:comment "\"format\": \"date-time\"" .
 
 
-###  http://OSDU_Ontology/OSDU#Endian
+###  https://w3id.org/OSDU#Endian
 :Endian rdf:type owl:DatatypeProperty ;
         rdfs:domain :AbstractDataset ;
         rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#EvaluatedRecordID
+###  https://w3id.org/OSDU#EvaluatedRecordID
 :EvaluatedRecordID rdf:type owl:DatatypeProperty ;
                    rdfs:domain :DataQuality ;
                    rdfs:range xsd:string ;
@@ -563,7 +563,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    xsd:pattern "^[\\\\w\\\\-\\\\.]+:(master-data|work-product|work-product-component)\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ExistenceKind_Property
+###  https://w3id.org/OSDU#ExistenceKind_Property
 :ExistenceKind_Property rdf:type owl:DatatypeProperty ;
                         rdfs:domain :AbstractCommonResources ;
                         rdfs:range xsd:string ;
@@ -571,7 +571,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                         xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ExistenceKind:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityEventTypeID
+###  https://w3id.org/OSDU#FacilityEventTypeID
 :FacilityEventTypeID rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractFacilityEvent ;
                      rdfs:range xsd:string ;
@@ -579,28 +579,28 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                      xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityEventType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityID
+###  https://w3id.org/OSDU#FacilityID
 :FacilityID rdf:type owl:DatatypeProperty ;
             rdfs:domain :AbstractFacility ;
             rdfs:range xsd:string ;
             rdfs:comment "A system-specified unique identifier of a Facility." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityName
+###  https://w3id.org/OSDU#FacilityName
 :FacilityName rdf:type owl:DatatypeProperty ;
               rdfs:domain :AbstractFacility ;
               rdfs:range xsd:string ;
               rdfs:comment "Name of the Facility." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityOperatorID
+###  https://w3id.org/OSDU#FacilityOperatorID
 :FacilityOperatorID rdf:type owl:DatatypeProperty ;
                     rdfs:domain :AbstractFacilityOperator ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Internal, unique identifier for an item 'AbstractFacilityOperator'. This identifier is used by 'AbstractFacility.CurrentOperatorID' and 'AbstractFacility.InitialOperatorID'." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityOperatorOrganisationID
+###  https://w3id.org/OSDU#FacilityOperatorOrganisationID
 :FacilityOperatorOrganisationID rdf:type owl:DatatypeProperty ;
                                 rdfs:domain :AbstractFacilityOperator ;
                                 rdfs:range xsd:string ;
@@ -608,7 +608,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                 xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FacilitySpecificationDateTime
+###  https://w3id.org/OSDU#FacilitySpecificationDateTime
 :FacilitySpecificationDateTime rdf:type owl:DatatypeProperty ;
                                rdfs:domain :AbstractFacilitySpecification ;
                                rdfs:range xsd:string ;
@@ -616,14 +616,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                             "The actual date and time value of the parameter." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilitySpecificationIndicator
+###  https://w3id.org/OSDU#FacilitySpecificationIndicator
 :FacilitySpecificationIndicator rdf:type owl:DatatypeProperty ;
                                 rdfs:domain :AbstractFacilitySpecification ;
                                 rdfs:range xsd:boolean ;
                                 rdfs:comment "The actual indicator value of the parameter." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilitySpecificationQuantity
+###  https://w3id.org/OSDU#FacilitySpecificationQuantity
 :FacilitySpecificationQuantity rdf:type owl:DatatypeProperty ;
                                rdfs:domain :AbstractFacilitySpecification ;
                                rdfs:range xsd:decimal ;
@@ -631,14 +631,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                             "UOM_via_property:UnitOfMeasureID" .
 
 
-###  http://OSDU_Ontology/OSDU#FacilitySpecificationText
+###  https://w3id.org/OSDU#FacilitySpecificationText
 :FacilitySpecificationText rdf:type owl:DatatypeProperty ;
                            rdfs:domain :AbstractFacilitySpecification ;
                            rdfs:range xsd:string ;
                            rdfs:comment "The actual text value of the parameter." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityStateTypeID
+###  https://w3id.org/OSDU#FacilityStateTypeID
 :FacilityStateTypeID rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractFacilityState ;
                      rdfs:range xsd:string ;
@@ -646,7 +646,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                      xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityStateType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityTypeID
+###  https://w3id.org/OSDU#FacilityTypeID
 :FacilityTypeID rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AbstractFacility ;
                 rdfs:range xsd:string ;
@@ -654,7 +654,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                 xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-FacilityType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FieldID
+###  https://w3id.org/OSDU#FieldID
 :FieldID rdf:type owl:DatatypeProperty ;
          rdfs:domain :AbstractGeoFieldContext ;
          rdfs:range xsd:string ;
@@ -662,14 +662,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
          xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Field:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#FileCollectionPath
+###  https://w3id.org/OSDU#FileCollectionPath
 :FileCollectionPath rdf:type owl:DatatypeProperty ;
                     rdfs:domain :DatasetProperties ;
                     rdfs:range xsd:string ;
                     rdfs:comment "An optional path to the file collection." .
 
 
-###  http://OSDU_Ontology/OSDU#FileSize
+###  https://w3id.org/OSDU#FileSize
 :FileSize rdf:type owl:DatatypeProperty ;
           rdfs:domain :AbstractFileSourceInfo ;
           rdfs:range xsd:string ;
@@ -678,7 +678,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
           xsd:pattern "^[0-9]+$" .
 
 
-###  http://OSDU_Ontology/OSDU#FileSource
+###  https://w3id.org/OSDU#FileSource
 :FileSource rdf:type owl:DatatypeProperty ;
             rdfs:domain :AbstractFileSourceInfo ,
                         :FileSourceInfos ;
@@ -687,7 +687,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
             owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#GeoTypeID
+###  https://w3id.org/OSDU#GeoTypeID
 :GeoTypeID rdf:type owl:DatatypeProperty ;
            rdfs:domain :AbstractGeoBasinContext ,
                        :AbstractGeoFieldContext ;
@@ -701,7 +701,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
            xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-BasinType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#HoleTypeLogging
+###  https://w3id.org/OSDU#HoleTypeLogging
 :HoleTypeLogging rdf:type owl:DatatypeProperty ;
                  rdfs:domain :WellLog ;
                  rdfs:range xsd:string ;
@@ -709,7 +709,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^OPENHOLE|CASEDHOLE|CEMENTEDHOLE$" .
 
 
-###  http://OSDU_Ontology/OSDU#ID
+###  https://w3id.org/OSDU#ID
 :ID rdf:type owl:DatatypeProperty ;
     rdfs:domain :AbstractReferenceType ,
                 :LineageAssertions ;
@@ -719,21 +719,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
     xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#InactiveIndicator
+###  https://w3id.org/OSDU#InactiveIndicator
 :InactiveIndicator rdf:type owl:DatatypeProperty ;
                    rdfs:domain :AbstractReferenceType ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "By default reference values are considered as 'active'. An absent 'InactiveIndicator' property value means the reference value is in active use. When 'InactiveIndicator' is set true the reverence value is no longer in use and should no longer be offered as a choice." .
 
 
-###  http://OSDU_Ontology/OSDU#IndexFilePath
+###  https://w3id.org/OSDU#IndexFilePath
 :IndexFilePath rdf:type owl:DatatypeProperty ;
                rdfs:domain :DatasetProperties ;
                rdfs:range xsd:string ;
                rdfs:comment "An optional path to an index file." .
 
 
-###  http://OSDU_Ontology/OSDU#InitialOperatorID
+###  https://w3id.org/OSDU#InitialOperatorID
 :InitialOperatorID rdf:type owl:DatatypeProperty ;
                    rdfs:domain :AbstractFacility ;
                    rdfs:range xsd:string ;
@@ -741,7 +741,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#InterestTypeID
+###  https://w3id.org/OSDU#InterestTypeID
 :InterestTypeID rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Well ;
                 rdfs:range xsd:string ;
@@ -749,56 +749,56 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                 xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-WellInterestType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#InternalOrganisationIndicator
+###  https://w3id.org/OSDU#InternalOrganisationIndicator
 :InternalOrganisationIndicator rdf:type owl:DatatypeProperty ;
                                rdfs:domain :Organisation ;
                                rdfs:range xsd:boolean ;
                                rdfs:comment "Indicates if the organisation is internal to the enterprise." .
 
 
-###  http://OSDU_Ontology/OSDU#Interpolate
+###  https://w3id.org/OSDU#Interpolate
 :Interpolate rdf:type owl:DatatypeProperty ;
              rdfs:domain :Curves ;
              rdfs:range xsd:boolean ;
              rdfs:comment "Whether curve can be interpolated or not" .
 
 
-###  http://OSDU_Ontology/OSDU#InterpreterName
+###  https://w3id.org/OSDU#InterpreterName
 :InterpreterName rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Curves ;
                  rdfs:range xsd:string ;
                  rdfs:comment "The name of person who interpreted this Log Curve." .
 
 
-###  http://OSDU_Ontology/OSDU#IsBaseUnit
+###  https://w3id.org/OSDU#IsBaseUnit
 :IsBaseUnit rdf:type owl:DatatypeProperty ;
             rdfs:domain :UnitOfMeasure ;
             rdfs:range xsd:boolean ;
             rdfs:comment "True if the unit is a base unit for the unit quantity. If the property is absent, it means the unit is not a base unit." .
 
 
-###  http://OSDU_Ontology/OSDU#IsDiscoverable
+###  https://w3id.org/OSDU#IsDiscoverable
 :IsDiscoverable rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AbstractWPCGroupType ;
                 rdfs:range xsd:boolean ;
                 rdfs:comment "A flag that indicates if the work product component is searchable, which means covered in the search index." .
 
 
-###  http://OSDU_Ontology/OSDU#IsExtendedLoad
+###  https://w3id.org/OSDU#IsExtendedLoad
 :IsExtendedLoad rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AbstractWPCGroupType ;
                 rdfs:range xsd:boolean ;
                 rdfs:comment "A flag that indicates if the work product component is undergoing an extended load.  It reflects the fact that the work product component is in an early stage and may be updated before finalization." .
 
 
-###  http://OSDU_Ontology/OSDU#IsProcessed
+###  https://w3id.org/OSDU#IsProcessed
 :IsProcessed rdf:type owl:DatatypeProperty ;
              rdfs:domain :Curves ;
              rdfs:range xsd:boolean ;
              rdfs:comment "Indicates if the curve has been (pre)processed or if it is a raw recording" .
 
 
-###  http://OSDU_Ontology/OSDU#KickOffWellbore
+###  https://w3id.org/OSDU#KickOffWellbore
 :KickOffWellbore rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Wellbore ;
                  rdfs:range xsd:string ;
@@ -806,13 +806,13 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Wellbore:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LegalTag
+###  https://w3id.org/OSDU#LegalTag
 :LegalTag rdf:type owl:DatatypeProperty ;
           rdfs:domain :Legal ;
           rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#LineageRelationshipType_Property
+###  https://w3id.org/OSDU#LineageRelationshipType_Property
 :LineageRelationshipType_Property rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :AbstractWorkProductComponent ;
                                   rdfs:range xsd:string ;
@@ -820,14 +820,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                   xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LineageRelationshipType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LogActivity
+###  https://w3id.org/OSDU#LogActivity
 :LogActivity rdf:type owl:DatatypeProperty ;
              rdfs:domain :WellLog ;
              rdfs:range xsd:string ;
              rdfs:comment "Log Activity, used to describe the type of pass such as Calibration Pass - Main Pass - Repeated Pass" .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveBusinessValueID
+###  https://w3id.org/OSDU#LogCurveBusinessValueID
 :LogCurveBusinessValueID rdf:type owl:DatatypeProperty ;
                          rdfs:domain :WellLog ;
                          rdfs:range xsd:string ;
@@ -835,7 +835,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                          xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveBusinessValue:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveFamilyID
+###  https://w3id.org/OSDU#LogCurveFamilyID
 :LogCurveFamilyID rdf:type owl:DatatypeProperty ;
                   rdfs:domain :WellLog ;
                   rdfs:range xsd:string ;
@@ -843,7 +843,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                   xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveFamily:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveMainFamilyID
+###  https://w3id.org/OSDU#LogCurveMainFamilyID
 :LogCurveMainFamilyID rdf:type owl:DatatypeProperty ;
                       rdfs:domain :WellLog ;
                       rdfs:range xsd:string ;
@@ -851,7 +851,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveMainFamily:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveTypeID
+###  https://w3id.org/OSDU#LogCurveTypeID
 :LogCurveTypeID rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WellLog ;
                 rdfs:range xsd:string ;
@@ -859,126 +859,126 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                 xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogCurveBusinessValue:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#LogRun
+###  https://w3id.org/OSDU#LogRun
 :LogRun rdf:type owl:DatatypeProperty ;
         rdfs:domain :WellLog ;
         rdfs:range xsd:string ;
         rdfs:comment "Log Run - describe the run of the log - can be a number, but may be also a alphanumeric description such as a version name" .
 
 
-###  http://OSDU_Ontology/OSDU#LogSource
+###  https://w3id.org/OSDU#LogSource
 :LogSource rdf:type owl:DatatypeProperty ;
            rdfs:domain :WellLog ;
            rdfs:range xsd:string ;
            rdfs:comment "OSDU Native Log Source - will be updated for later releases - not to be used yet" .
 
 
-###  http://OSDU_Ontology/OSDU#LogVersion
+###  https://w3id.org/OSDU#LogVersion
 :LogVersion rdf:type owl:DatatypeProperty ;
             rdfs:domain :WellLog ;
             rdfs:range xsd:string ;
             rdfs:comment "Log Version" .
 
 
-###  http://OSDU_Ontology/OSDU#LoggingDirection
+###  https://w3id.org/OSDU#LoggingDirection
 :LoggingDirection rdf:type owl:DatatypeProperty ;
                   rdfs:domain :WellLog ;
                   rdfs:range xsd:string ;
                   rdfs:comment "Specifies whether curves were collected downward or upward" .
 
 
-###  http://OSDU_Ontology/OSDU#LoggingService
+###  https://w3id.org/OSDU#LoggingService
 :LoggingService rdf:type owl:DatatypeProperty ;
                 rdfs:domain :WellLog ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Logging Service - mainly a short concatenation of the names of the tools" .
 
 
-###  http://OSDU_Ontology/OSDU#MemberUnits
+###  https://w3id.org/OSDU#MemberUnits
 :MemberUnits rdf:type owl:DatatypeProperty ;
              rdfs:domain :UnitQuantity ;
              rdfs:range xsd:string ;
              rdfs:comment "Specifies the symbol of a unit of which is a member of this class. Membership indicates that a value of that class can be converted to any other member unit of that class without loss of semantics. This because the conversion formula represents a unitless factor of one." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataAdditionalPropertiesTrue
+###  https://w3id.org/OSDU#MetadataAdditionalPropertiesTrue
 :MetadataAdditionalPropertiesTrue rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :AbstractQualityMetric ;
                                   rdfs:range xsd:decimal ;
                                   rdfs:comment "The count of total number of additional properties that are not populated." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountAdditionalProperty
+###  https://w3id.org/OSDU#MetadataCountAdditionalProperty
 :MetadataCountAdditionalProperty rdf:type owl:DatatypeProperty ;
                                  rdfs:domain :AbstractQualityMetric ;
                                  rdfs:range xsd:decimal ;
                                  rdfs:comment "Total number of additional properties." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountFormat
+###  https://w3id.org/OSDU#MetadataCountFormat
 :MetadataCountFormat rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractQualityMetric ;
                      rdfs:range xsd:decimal ;
                      rdfs:comment "Total number of attributes defined in reference value lists." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountPattern
+###  https://w3id.org/OSDU#MetadataCountPattern
 :MetadataCountPattern rdf:type owl:DatatypeProperty ;
                       rdfs:domain :AbstractQualityMetric ;
                       rdfs:range xsd:decimal ;
                       rdfs:comment "Total number of attributes with a pattern." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountRequired
+###  https://w3id.org/OSDU#MetadataCountRequired
 :MetadataCountRequired rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractQualityMetric ;
                        rdfs:range xsd:decimal ;
                        rdfs:comment "Total number required attributes." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountRequiredTrue
+###  https://w3id.org/OSDU#MetadataCountRequiredTrue
 :MetadataCountRequiredTrue rdf:type owl:DatatypeProperty ;
                            rdfs:domain :AbstractQualityMetric ;
                            rdfs:range xsd:decimal ;
                            rdfs:comment "The count of required metadata that are not populated." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataCountTotal
+###  https://w3id.org/OSDU#MetadataCountTotal
 :MetadataCountTotal rdf:type owl:DatatypeProperty ;
                     rdfs:domain :AbstractQualityMetric ;
                     rdfs:range xsd:decimal ;
                     rdfs:comment "Total number of metadata attributes for object in scope." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataFormat
+###  https://w3id.org/OSDU#MetadataFormat
 :MetadataFormat rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AbstractQualityMetric ;
                 rdfs:range xsd:decimal ;
                 rdfs:comment "The count of total number where attribute follows the defined reference value lists." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataNull
+###  https://w3id.org/OSDU#MetadataNull
 :MetadataNull rdf:type owl:DatatypeProperty ;
               rdfs:domain :AbstractQualityMetric ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The count of total number where metadata is not populated." .
 
 
-###  http://OSDU_Ontology/OSDU#MetadataPattern
+###  https://w3id.org/OSDU#MetadataPattern
 :MetadataPattern rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AbstractQualityMetric ;
                  rdfs:range xsd:decimal ;
                  rdfs:comment "The count of total number of attributes that follow pattern." .
 
 
-###  http://OSDU_Ontology/OSDU#Mnemonic
+###  https://w3id.org/OSDU#Mnemonic
 :Mnemonic rdf:type owl:DatatypeProperty ;
           rdfs:domain :Curves ;
           rdfs:range xsd:string ;
           rdfs:comment "The Mnemonic of the Log Curve is the value as received either from Raw Providers or from Internal Processing team" .
 
 
-###  http://OSDU_Ontology/OSDU#Name
+###  https://w3id.org/OSDU#Name
 :Name rdf:type owl:DatatypeProperty ;
       rdfs:domain :AbstractDataset ,
                   :AbstractFileSourceInfo ,
@@ -991,14 +991,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    "The name of the entity instance." .
 
 
-###  http://OSDU_Ontology/OSDU#NullValue
+###  https://w3id.org/OSDU#NullValue
 :NullValue rdf:type owl:DatatypeProperty ;
            rdfs:domain :Curves ;
            rdfs:range xsd:boolean ;
            rdfs:comment "Indicates that there is no measurement within the curve" .
 
 
-###  http://OSDU_Ontology/OSDU#OperatingEnvironmentID
+###  https://w3id.org/OSDU#OperatingEnvironmentID
 :OperatingEnvironmentID rdf:type owl:DatatypeProperty ;
                         rdfs:domain :AbstractFacility ;
                         rdfs:range xsd:string ;
@@ -1006,33 +1006,33 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                         xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OperatingEnvironment:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationDescription
+###  https://w3id.org/OSDU#OrganisationDescription
 :OrganisationDescription rdf:type owl:DatatypeProperty ;
                          rdfs:domain :Organisation ;
                          rdfs:range xsd:string ;
                          rdfs:comment "Textual description of the nature of the organisation." .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationID
+###  https://w3id.org/OSDU#OrganisationID
 :OrganisationID rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Organisation ;
                 rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationName
+###  https://w3id.org/OSDU#OrganisationName
 :OrganisationName rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Organisation ;
                   rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationPurposeDescription
+###  https://w3id.org/OSDU#OrganisationPurposeDescription
 :OrganisationPurposeDescription rdf:type owl:DatatypeProperty ;
                                 rdfs:domain :Organisation ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "The reason why the organization was formed." .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationTypeID
+###  https://w3id.org/OSDU#OrganisationTypeID
 :OrganisationTypeID rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Organisation ;
                     rdfs:range xsd:string ;
@@ -1040,7 +1040,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                     xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OrganisationType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#OtherRelevantDataCountries
+###  https://w3id.org/OSDU#OtherRelevantDataCountries
 :OtherRelevantDataCountries rdf:type owl:DatatypeProperty ;
                             rdfs:domain :AbstractLegalTags ,
                                         :Legal ;
@@ -1048,13 +1048,13 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                             owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#Owners
+###  https://w3id.org/OSDU#Owners
 :Owners rdf:type owl:DatatypeProperty ;
         rdfs:domain :ACL ;
         rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#ParameterTypeID
+###  https://w3id.org/OSDU#ParameterTypeID
 :ParameterTypeID rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AbstractFacilitySpecification ;
                  rdfs:range xsd:string ;
@@ -1062,21 +1062,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ParameterType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ParentUnitQuantity
+###  https://w3id.org/OSDU#ParentUnitQuantity
 :ParentUnitQuantity rdf:type owl:DatatypeProperty ;
                     rdfs:domain :UnitQuantity ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Optional parent unit quantity code in case a specialized unit quantity is needed. This is typically used to assign display units to particular measurements like cylinder diameter (small) versus geographic distance (large). I this case the persistable reference string will contain the full ancestry, e.g. \\\"L.length.CylinderDiameter\\\"." .
 
 
-###  http://OSDU_Ontology/OSDU#PassNumber
+###  https://w3id.org/OSDU#PassNumber
 :PassNumber rdf:type owl:DatatypeProperty ;
             rdfs:domain :WellLog ;
             rdfs:range xsd:integer ;
             rdfs:comment "Indicates if the Pass is the Main one (1) or a repeated one - and it's level repetition" .
 
 
-###  http://OSDU_Ontology/OSDU#PersistableReference
+###  https://w3id.org/OSDU#PersistableReference
 :PersistableReference rdf:type owl:DatatypeProperty ;
                       rdfs:domain :UnitOfMeasure ,
                                   :UnitQuantity ;
@@ -1086,12 +1086,12 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                    "{\\\"ancestry\\\":\\\"K.thermodynamic temperature\\\",\\\"type\\\":\\\"UM\\\"}" .
 
 
-###  http://OSDU_Ontology/OSDU#PersistableReferenceCrs
+###  https://w3id.org/OSDU#PersistableReferenceCrs
 :PersistableReferenceCrs rdf:type owl:DatatypeProperty ;
                          rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#PreloadFileCreateDate
+###  https://w3id.org/OSDU#PreloadFileCreateDate
 :PreloadFileCreateDate rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractFileSourceInfo ;
                        rdfs:range xsd:string ;
@@ -1099,14 +1099,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                     "Optional create date and time of the file prior to up-loading to the platform." .
 
 
-###  http://OSDU_Ontology/OSDU#PreloadFileCreateUser
+###  https://w3id.org/OSDU#PreloadFileCreateUser
 :PreloadFileCreateUser rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractFileSourceInfo ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Optional user name or reference, who created the file prior to up-loading to the platform." .
 
 
-###  http://OSDU_Ontology/OSDU#PreloadFileModifyDate
+###  https://w3id.org/OSDU#PreloadFileModifyDate
 :PreloadFileModifyDate rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractFileSourceInfo ;
                        rdfs:range xsd:string ;
@@ -1114,21 +1114,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                     "Preload File Modify Date" .
 
 
-###  http://OSDU_Ontology/OSDU#PreloadFileModifyUser
+###  https://w3id.org/OSDU#PreloadFileModifyUser
 :PreloadFileModifyUser rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractFileSourceInfo ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Optional user name or reference, who last modified the file prior to up-loading to the platform." .
 
 
-###  http://OSDU_Ontology/OSDU#PreloadFilePath
+###  https://w3id.org/OSDU#PreloadFilePath
 :PreloadFilePath rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AbstractFileSourceInfo ;
                  rdfs:range xsd:string ;
                  rdfs:comment "File system path to the data file as it existed before loading to the data platform." .
 
 
-###  http://OSDU_Ontology/OSDU#PrimaryMaterialID
+###  https://w3id.org/OSDU#PrimaryMaterialID
 :PrimaryMaterialID rdf:type owl:DatatypeProperty ;
                    rdfs:domain :Wellbore ;
                    rdfs:range xsd:string ;
@@ -1136,7 +1136,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-MaterialType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceCurationStatus_Property
+###  https://w3id.org/OSDU#ResourceCurationStatus_Property
 :ResourceCurationStatus_Property rdf:type owl:DatatypeProperty ;
                                  rdfs:domain :AbstractCommonResources ;
                                  rdfs:range xsd:string ;
@@ -1144,7 +1144,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceCurationStatus:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceHomeRegionID
+###  https://w3id.org/OSDU#ResourceHomeRegionID
 :ResourceHomeRegionID rdf:type owl:DatatypeProperty ;
                       rdfs:domain :AbstractCommonResources ;
                       rdfs:range xsd:string ;
@@ -1152,7 +1152,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                       xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OSDURegion:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceHostRegionIDs
+###  https://w3id.org/OSDU#ResourceHostRegionIDs
 :ResourceHostRegionIDs rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractCommonResources ;
                        rdfs:range xsd:string ;
@@ -1160,7 +1160,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                        xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-OSDURegion:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceID
+###  https://w3id.org/OSDU#ResourceID
 :ResourceID rdf:type owl:DatatypeProperty ;
             rdfs:domain :Artefacts ;
             rdfs:range xsd:string ;
@@ -1169,7 +1169,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
             xsd:pattern "^[\\\\w\\\\-\\\\.]+:dataset\\\\-\\\\-[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceKind
+###  https://w3id.org/OSDU#ResourceKind
 :ResourceKind rdf:type owl:DatatypeProperty ;
               rdfs:domain :Artefacts ;
               rdfs:range xsd:string ;
@@ -1177,7 +1177,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
               xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[0-9]+.[0-9]+.[0-9]+$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceLifecycleStatus_Property
+###  https://w3id.org/OSDU#ResourceLifecycleStatus_Property
 :ResourceLifecycleStatus_Property rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :AbstractCommonResources ;
                                   rdfs:range xsd:string ;
@@ -1185,7 +1185,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                   xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceLifecycleStatus:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceSecurityClassification_Property
+###  https://w3id.org/OSDU#ResourceSecurityClassification_Property
 :ResourceSecurityClassification_Property rdf:type owl:DatatypeProperty ;
                                          rdfs:domain :AbstractCommonResources ;
                                          rdfs:range xsd:string ;
@@ -1193,7 +1193,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                          xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ResourceSecurityClassification:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#RoleID
+###  https://w3id.org/OSDU#RoleID
 :RoleID rdf:type owl:DatatypeProperty ;
         rdfs:domain :Artefacts ;
         rdfs:range xsd:string ;
@@ -1201,7 +1201,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
         xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-ArtefactRole:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#RunDateTime
+###  https://w3id.org/OSDU#RunDateTime
 :RunDateTime rdf:type owl:DatatypeProperty ;
              rdfs:domain :AbstractQualityMetric ;
              rdfs:range xsd:string ;
@@ -1209,7 +1209,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           "Run timestamp of the Business data quality ruleset." .
 
 
-###  http://OSDU_Ontology/OSDU#SchemaFormatTypeID
+###  https://w3id.org/OSDU#SchemaFormatTypeID
 :SchemaFormatTypeID rdf:type owl:DatatypeProperty ;
                     rdfs:domain :AbstractDataset ;
                     rdfs:range xsd:string ;
@@ -1217,14 +1217,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                     xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-SchemaFormatType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#SequenceNumber
+###  https://w3id.org/OSDU#SequenceNumber
 :SequenceNumber rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Wellbore ;
                 rdfs:range xsd:integer ;
                 rdfs:comment "A number that indicates the order in which wellbores were drilled." .
 
 
-###  http://OSDU_Ontology/OSDU#ServiceCompanyID
+###  https://w3id.org/OSDU#ServiceCompanyID
 :ServiceCompanyID rdf:type owl:DatatypeProperty ;
                   rdfs:domain :WellLog ;
                   rdfs:range xsd:string ;
@@ -1232,35 +1232,35 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                   xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Organisation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#Source
+###  https://w3id.org/OSDU#Source
 :Source rdf:type owl:DatatypeProperty ;
         rdfs:domain :AbstractCommonResources ;
         rdfs:range xsd:string ;
         rdfs:comment "The entity that produced the record, or from which it is received; could be an organization, agency, system, internal team, or individual. For informational purposes only, the list of sources is not governed." .
 
 
-###  http://OSDU_Ontology/OSDU#StartDate
+###  https://w3id.org/OSDU#StartDate
 :StartDate rdf:type owl:DatatypeProperty ;
            rdfs:domain :LogServiceDateInterval ;
            rdfs:range xsd:string ;
            rdfs:comment "\"format\": \"date-time\"" .
 
 
-###  http://OSDU_Ontology/OSDU#SubmitterName
+###  https://w3id.org/OSDU#SubmitterName
 :SubmitterName rdf:type owl:DatatypeProperty ;
                rdfs:domain :AbstractWorkProductComponent ;
                rdfs:range xsd:string ;
                rdfs:comment "Name of the person that first submitted the work product component to OSDU." .
 
 
-###  http://OSDU_Ontology/OSDU#Tags
+###  https://w3id.org/OSDU#Tags
 :Tags rdf:type owl:DatatypeProperty ;
       rdfs:domain :AbstractWorkProductComponent ;
       rdfs:range xsd:string ;
       rdfs:comment "Array of key words to identify the work product, especially to help in search." .
 
 
-###  http://OSDU_Ontology/OSDU#TargetFormation
+###  https://w3id.org/OSDU#TargetFormation
 :TargetFormation rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Wellbore ;
                  rdfs:range xsd:string ;
@@ -1268,14 +1268,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-GeologicalFormation:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#TerminationDate
+###  https://w3id.org/OSDU#TerminationDate
 :TerminationDate rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Organisation ;
                  rdfs:range xsd:string ;
                  rdfs:comment "The date and time at which a given organisation is no longer in effect." .
 
 
-###  http://OSDU_Ontology/OSDU#TerminationDateTime
+###  https://w3id.org/OSDU#TerminationDateTime
 :TerminationDateTime rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractAliasNames ,
                                  :AbstractFacilityEvent ,
@@ -1295,21 +1295,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                   "The date and time at which the facility state is no longer in effect." .
 
 
-###  http://OSDU_Ontology/OSDU#ToolStringDescription
+###  https://w3id.org/OSDU#ToolStringDescription
 :ToolStringDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain :WellLog ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Tool String Description - a long concatenation of the tools used for logging services such as GammaRay+NeutronPorosity" .
 
 
-###  http://OSDU_Ontology/OSDU#TopDepth
+###  https://w3id.org/OSDU#TopDepth
 :TopDepth rdf:type owl:DatatypeProperty ;
           rdfs:domain :Curves ;
           rdfs:range xsd:decimal ;
           rdfs:comment "UOM_via_property:DepthUnit" .
 
 
-###  http://OSDU_Ontology/OSDU#TopMeasuredDepth
+###  https://w3id.org/OSDU#TopMeasuredDepth
 :TopMeasuredDepth rdf:type owl:DatatypeProperty ;
                   rdfs:domain :WellLog ;
                   rdfs:range xsd:decimal ;
@@ -1317,7 +1317,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                "UOM:length" .
 
 
-###  http://OSDU_Ontology/OSDU#TotalSize
+###  https://w3id.org/OSDU#TotalSize
 :TotalSize rdf:type owl:DatatypeProperty ;
            rdfs:domain :AbstractDataset ;
            rdfs:range xsd:string ;
@@ -1326,7 +1326,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
            xsd:pattern "^[0-9]+$" .
 
 
-###  http://OSDU_Ontology/OSDU#TrajectoryTypeID
+###  https://w3id.org/OSDU#TrajectoryTypeID
 :TrajectoryTypeID rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Wellbore ;
                   rdfs:range xsd:string ;
@@ -1334,33 +1334,33 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                   xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-WellboreTrajectoryType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#Type
+###  https://w3id.org/OSDU#Type
 :Type rdf:type owl:DatatypeProperty ;
       rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#UnitDimension
+###  https://w3id.org/OSDU#UnitDimension
 :UnitDimension rdf:type owl:DatatypeProperty ;
                rdfs:domain :UnitQuantity ;
                rdfs:range xsd:string ;
                rdfs:comment "The UnitQuantity dimensionality using the symbols for dimension as defined in https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf, i.e. L for length, M for mass, T for time, I for electric current, N for amount of substance, J for luminous intensity; except \\u0398 for thermodynamic temperature, which is replaced by the symbol K, the additional symbol D for temperature difference and the additional symbol 0 for no dimension." .
 
 
-###  http://OSDU_Ontology/OSDU#UnitDimensionCode
+###  https://w3id.org/OSDU#UnitDimensionCode
 :UnitDimensionCode rdf:type owl:DatatypeProperty ;
                    rdfs:domain :UnitOfMeasure ;
                    rdfs:range xsd:string ;
                    rdfs:comment "The dimensionality using the symbols for dimension as defined in https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf, i.e. L for length, M for mass, T for time, I for electric current, N for amount of substance, J for luminous intensity; except \\u0398 for thermodynamic temperature, which is replaced by the symbol K, the additional symbol D for temperature difference and the additional symbol 0 for no dimension." .
 
 
-###  http://OSDU_Ontology/OSDU#UnitDimensionName
+###  https://w3id.org/OSDU#UnitDimensionName
 :UnitDimensionName rdf:type owl:DatatypeProperty ;
                    rdfs:domain :UnitOfMeasure ;
                    rdfs:range xsd:string ;
                    rdfs:comment "The name of the unit dimension concept." .
 
 
-###  http://OSDU_Ontology/OSDU#UnitOfMeasureID
+###  https://w3id.org/OSDU#UnitOfMeasureID
 :UnitOfMeasureID rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AbstractFacilitySpecification ;
                  rdfs:range xsd:string ;
@@ -1368,7 +1368,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                  xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#UnitQuantityID
+###  https://w3id.org/OSDU#UnitQuantityID
 :UnitQuantityID rdf:type owl:DatatypeProperty ;
                 rdfs:domain :UnitOfMeasure ;
                 rdfs:range xsd:string ;
@@ -1376,14 +1376,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                 xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitQuantity:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VersionCreationReason
+###  https://w3id.org/OSDU#VersionCreationReason
 :VersionCreationReason rdf:type owl:DatatypeProperty ;
                        rdfs:domain :AbstractMaster ;
                        rdfs:range xsd:string ;
                        rdfs:comment "This describes the reason that caused the creation of a new version of this master data." .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalCRSID
+###  https://w3id.org/OSDU#VerticalCRSID
 :VerticalCRSID rdf:type owl:DatatypeProperty ;
                rdfs:domain :AbstractFacilityVerticalMeasurement ,
                            :VerticalMeasurements ;
@@ -1392,7 +1392,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurement
+###  https://w3id.org/OSDU#VerticalMeasurement
 :VerticalMeasurement rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractFacilityVerticalMeasurement ,
                                  :VerticalMeasurements ;
@@ -1401,14 +1401,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                   "UOM_via_property:VerticalMeasurementUnitOfMeasureID" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementDescription
+###  https://w3id.org/OSDU#VerticalMeasurementDescription
 :VerticalMeasurementDescription rdf:type owl:DatatypeProperty ;
                                 rdfs:domain :AbstractFacilityVerticalMeasurement ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "Text which describes a vertical measurement in detail." .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementID
+###  https://w3id.org/OSDU#VerticalMeasurementID
 :VerticalMeasurementID rdf:type owl:DatatypeProperty ;
                        rdfs:domain :VerticalMeasurements ,
                                    :WellLog ;
@@ -1417,7 +1417,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                     "The ID for a distinct vertical measurement within the Wellbore VerticalMeasurements array so that it may be referenced by other vertical measurements if necessary." .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementPathID
+###  https://w3id.org/OSDU#VerticalMeasurementPathID
 :VerticalMeasurementPathID rdf:type owl:DatatypeProperty ;
                            rdfs:domain :AbstractFacilityVerticalMeasurement ,
                                        :VerticalMeasurements ;
@@ -1426,7 +1426,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                            xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementPath:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementSourceID
+###  https://w3id.org/OSDU#VerticalMeasurementSourceID
 :VerticalMeasurementSourceID rdf:type owl:DatatypeProperty ;
                              rdfs:domain :AbstractFacilityVerticalMeasurement ;
                              rdfs:range xsd:string ;
@@ -1434,7 +1434,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                              xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementSource:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementTypeID
+###  https://w3id.org/OSDU#VerticalMeasurementTypeID
 :VerticalMeasurementTypeID rdf:type owl:DatatypeProperty ;
                            rdfs:domain :AbstractFacilityVerticalMeasurement ,
                                        :VerticalMeasurements ;
@@ -1443,7 +1443,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                            xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-VerticalMeasurementType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementUnitOfMeasureID
+###  https://w3id.org/OSDU#VerticalMeasurementUnitOfMeasureID
 :VerticalMeasurementUnitOfMeasureID rdf:type owl:DatatypeProperty ;
                                     rdfs:domain :AbstractFacilityVerticalMeasurement ,
                                                 :VerticalMeasurements ;
@@ -1452,27 +1452,27 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                     xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-UnitOfMeasure:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalReferenceID
+###  https://w3id.org/OSDU#VerticalReferenceID
 :VerticalReferenceID rdf:type owl:DatatypeProperty ;
                      rdfs:domain :AbstractFacilityVerticalMeasurement ;
                      rdfs:range xsd:string ;
                      rdfs:comment "The reference point from which the relative vertical measurement is made. This is only populated if the measurement has no VerticalCRSID specified. The value entered must be the VerticalMeasurementID for another vertical measurement array element in this resource or its parent facility, and as a chain of measurements, they must resolve ultimately to a Vertical CRS. It is expected that a VerticalCRSID or a VerticalReferenceID is provided in a given vertical measurement array object, but not both." .
 
 
-###  http://OSDU_Ontology/OSDU#Viewers
+###  https://w3id.org/OSDU#Viewers
 :Viewers rdf:type owl:DatatypeProperty ;
          rdfs:domain :ACL ;
          rdfs:range xsd:string .
 
 
-###  http://OSDU_Ontology/OSDU#WellID
+###  https://w3id.org/OSDU#WellID
 :WellID rdf:type owl:DatatypeProperty ;
         rdfs:domain :Wellbore ;
         rdfs:range xsd:string ;
         xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Well:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#WellLogTypeID
+###  https://w3id.org/OSDU#WellLogTypeID
 :WellLogTypeID rdf:type owl:DatatypeProperty ;
                rdfs:domain :WellLog ;
                rdfs:range xsd:string ;
@@ -1480,7 +1480,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-LogType:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#WellboreID
+###  https://w3id.org/OSDU#WellboreID
 :WellboreID rdf:type owl:DatatypeProperty ;
             rdfs:domain :WellLog ;
             rdfs:range xsd:string ;
@@ -1488,7 +1488,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
             xsd:pattern "^[\\\\w\\\\-\\\\.]+:master-data\\\\-\\\\-Wellbore:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#WellboreTVDTrajectoryID
+###  https://w3id.org/OSDU#WellboreTVDTrajectoryID
 :WellboreTVDTrajectoryID rdf:type owl:DatatypeProperty ;
                          rdfs:domain :AbstractFacilityVerticalMeasurement ;
                          rdfs:range xsd:string ;
@@ -1496,21 +1496,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                          xsd:pattern "^[\\\\w\\\\-\\\\.]+:work-product-component\\\\-\\\\-WellboreTrajectory:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]*$" .
 
 
-###  http://OSDU_Ontology/OSDU#createTime
+###  https://w3id.org/OSDU#createTime
 :createTime rdf:type owl:DatatypeProperty ;
             rdfs:domain :System ;
             rdfs:range xsd:string ;
             rdfs:comment "Timestamp of the time at which initial version of this OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC. Format: date-time Example: \"2020-12-16T11:46:20.163Z\"" .
 
 
-###  http://OSDU_Ontology/OSDU#createUser
+###  https://w3id.org/OSDU#createUser
 :createUser rdf:type owl:DatatypeProperty ;
             rdfs:domain :System ;
             rdfs:range xsd:string ;
             rdfs:comment "The user reference, which created the first version of this resource object. Set by the System." .
 
 
-###  http://OSDU_Ontology/OSDU#id
+###  https://w3id.org/OSDU#id
 :id rdf:type owl:DatatypeProperty ;
     rdfs:domain :System ;
     rdfs:range xsd:string ;
@@ -1518,7 +1518,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
     xsd:pattern "^[\\\\w\\\\-\\\\.]+:reference-data\\\\-\\\\-CoordinateReferenceSystem:[\\\\w\\\\-\\\\.\\\\:\\\\%]+$" .
 
 
-###  http://OSDU_Ontology/OSDU#kind
+###  https://w3id.org/OSDU#kind
 :kind rdf:type owl:DatatypeProperty ;
       rdfs:domain :System ;
       rdfs:range xsd:string ;
@@ -1527,7 +1527,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
       owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#legaltags
+###  https://w3id.org/OSDU#legaltags
 :legaltags rdf:type owl:DatatypeProperty ;
            rdfs:domain :AbstractLegalTags ;
            rdfs:range xsd:string ;
@@ -1535,21 +1535,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
            owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#modifyTime
+###  https://w3id.org/OSDU#modifyTime
 :modifyTime rdf:type owl:DatatypeProperty ;
             rdfs:domain :System ;
             rdfs:range xsd:string ;
             rdfs:comment "Timestamp of the time at which this version of the OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC. Format: date-time. Example: \"2020-12-16T11:52:24.477Z\"" .
 
 
-###  http://OSDU_Ontology/OSDU#modifyUser
+###  https://w3id.org/OSDU#modifyUser
 :modifyUser rdf:type owl:DatatypeProperty ;
             rdfs:domain :System ;
             rdfs:range xsd:string ;
             rdfs:comment "The user reference, which created this version of this resource object. Set by the System." .
 
 
-###  http://OSDU_Ontology/OSDU#owners
+###  https://w3id.org/OSDU#owners
 :owners rdf:type owl:DatatypeProperty ;
         rdfs:domain :AbstractAccessControlList ;
         rdfs:range xsd:string ;
@@ -1558,7 +1558,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
         owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#parents
+###  https://w3id.org/OSDU#parents
 :parents rdf:type owl:DatatypeProperty ;
          rdfs:domain :AbstractLegalParentList ;
          rdfs:range xsd:string ;
@@ -1566,7 +1566,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
          xsd:pattern "^[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.]+:[\\\\w\\\\-\\\\.\\\\:\\\\%]+:[0-9]+$" .
 
 
-###  http://OSDU_Ontology/OSDU#status
+###  https://w3id.org/OSDU#status
 :status rdf:type owl:DatatypeProperty ;
         rdfs:domain :AbstractLegalTags ;
         rdfs:range xsd:string ;
@@ -1574,21 +1574,21 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
         xsd:pattern "^(compliant|uncompliant)$" .
 
 
-###  http://OSDU_Ontology/OSDU#tags
+###  https://w3id.org/OSDU#tags
 :tags rdf:type owl:DatatypeProperty ;
       rdfs:domain :System ;
       rdfs:range xsd:string ;
       rdfs:comment "A generic dictionary of string keys mapping to string value. Only strings are permitted as keys and values." .
 
 
-###  http://OSDU_Ontology/OSDU#version
+###  https://w3id.org/OSDU#version
 :version rdf:type owl:DatatypeProperty ;
          rdfs:domain :System ;
          rdfs:range xsd:string ;
          rdfs:comment "The version number of this OSDU resource; set by the framework." .
 
 
-###  http://OSDU_Ontology/OSDU#viewers
+###  https://w3id.org/OSDU#viewers
 :viewers rdf:type owl:DatatypeProperty ;
          rdfs:domain :AbstractAccessControlList ;
          rdfs:range xsd:string ;
@@ -1601,99 +1601,99 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://OSDU_Ontology/OSDU#ACL
+###  https://w3id.org/OSDU#ACL
 :ACL rdf:type owl:Class ;
      rdfs:subClassOf :AbstractAccessControlList ;
      rdfs:comment "The access control tags associated with this entity." ;
      owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractAccessControlList
+###  https://w3id.org/OSDU#AbstractAccessControlList
 :AbstractAccessControlList rdf:type owl:Class ;
                            rdfs:subClassOf owl:Thing ;
                            rdfs:comment "The access control tags associated with this entity. This structure is included by the SystemProperties \\\"acl\\\", which is part of all OSDU records. Not extensible." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractAliasNames
+###  https://w3id.org/OSDU#AbstractAliasNames
 :AbstractAliasNames rdf:type owl:Class ;
                     rdfs:subClassOf owl:Thing ;
                     rdfs:comment "A list of alternative names for an object.  The preferred name is in a separate, scalar property.  It may or may not be repeated in the alias list, though a best practice is to include it if the list is present, but to omit the list if there are no other names.  Note that the abstract entity is an array so the $ref to it is a simple property reference." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractBusinessRule
+###  https://w3id.org/OSDU#AbstractBusinessRule
 :AbstractBusinessRule rdf:type owl:Class ;
                       rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractCommonResources
+###  https://w3id.org/OSDU#AbstractCommonResources
 :AbstractCommonResources rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
                          rdfs:comment "Common resources to be injected at root 'data' level for every entity, which is persistable in Storage. The insertion is performed by the OsduSchemaComposer script." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractDataset
+###  https://w3id.org/OSDU#AbstractDataset
 :AbstractDataset rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  rdfs:comment "Schema fragment holding properties common for all datasets." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacility
+###  https://w3id.org/OSDU#AbstractFacility
 :AbstractFacility rdf:type owl:Class ;
                   rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacilityEvent
+###  https://w3id.org/OSDU#AbstractFacilityEvent
 :AbstractFacilityEvent rdf:type owl:Class ;
                        rdfs:subClassOf owl:Thing ;
                        rdfs:comment "A significant occurrence in the life of a facility, which often changes its state, or the state of one of its components. It can describe a point-in-time (event) or a time interval of a specific type (FacilityEventType)." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacilityOperator
+###  https://w3id.org/OSDU#AbstractFacilityOperator
 :AbstractFacilityOperator rdf:type owl:Class ;
                           rdfs:subClassOf owl:Thing ;
                           rdfs:comment "The organisation that was responsible for a facility at some point in time." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacilitySpecification
+###  https://w3id.org/OSDU#AbstractFacilitySpecification
 :AbstractFacilitySpecification rdf:type owl:Class ;
                                rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacilityState
+###  https://w3id.org/OSDU#AbstractFacilityState
 :AbstractFacilityState rdf:type owl:Class ;
                        rdfs:subClassOf owl:Thing ;
                        rdfs:comment "The life cycle status of a facility at some point in time." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFacilityVerticalMeasurement
+###  https://w3id.org/OSDU#AbstractFacilityVerticalMeasurement
 :AbstractFacilityVerticalMeasurement rdf:type owl:Class ;
                                      rdfs:subClassOf owl:Thing ;
                                      rdfs:comment "A location along a wellbore, _usually_ associated with some aspect of the drilling of the wellbore, but not with any intersecting _subsurface_ natural surfaces." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFile
+###  https://w3id.org/OSDU#AbstractFile
 :AbstractFile rdf:type owl:Class ;
               rdfs:subClassOf owl:Thing ;
               rdfs:comment "The schema fragment representing single files" .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFileCollection
+###  https://w3id.org/OSDU#AbstractFileCollection
 :AbstractFileCollection rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFileSourceInfo
+###  https://w3id.org/OSDU#AbstractFileSourceInfo
 :AbstractFileSourceInfo rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoBasinContext
+###  https://w3id.org/OSDU#AbstractGeoBasinContext
 :AbstractGeoBasinContext rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
                          rdfs:comment "A single, typed basin entity reference, which is 'abstracted' to AbstractGeoContext and then aggregated by GeoContexts properties." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoContext
+###  https://w3id.org/OSDU#AbstractGeoContext
 :AbstractGeoContext rdf:type owl:Class ;
                     rdfs:subClassOf :AbstractGeoBasinContext ,
                                     :AbstractGeoFieldContext ,
@@ -1704,130 +1704,130 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                     rdfs:comment "A geographic context to an entity. It can be either a reference to a GeoPoliticalEntity, Basin, Field, Play or Prospect." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoFieldContext
+###  https://w3id.org/OSDU#AbstractGeoFieldContext
 :AbstractGeoFieldContext rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoPlayContext
+###  https://w3id.org/OSDU#AbstractGeoPlayContext
 :AbstractGeoPlayContext rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoPoliticalContext
+###  https://w3id.org/OSDU#AbstractGeoPoliticalContext
 :AbstractGeoPoliticalContext rdf:type owl:Class ;
                              rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractGeoProspectContext
+###  https://w3id.org/OSDU#AbstractGeoProspectContext
 :AbstractGeoProspectContext rdf:type owl:Class ;
                             rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractLegalParentList
+###  https://w3id.org/OSDU#AbstractLegalParentList
 :AbstractLegalParentList rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
                          rdfs:comment "A list of entity IDs in the data ecosystem, which act as legal parents to the current entity. This structure is included by the SystemProperties \\\"ancestry\\\", which is part of all OSDU records. Not extensible." .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractLegalTags
+###  https://w3id.org/OSDU#AbstractLegalTags
 :AbstractLegalTags rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractMaster
+###  https://w3id.org/OSDU#AbstractMaster
 :AbstractMaster rdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractMetaItem
+###  https://w3id.org/OSDU#AbstractMetaItem
 :AbstractMetaItem rdf:type owl:Class ;
                   rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractQualityMetric
+###  https://w3id.org/OSDU#AbstractQualityMetric
 :AbstractQualityMetric rdf:type owl:Class ;
                        rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractReferenceType
+###  https://w3id.org/OSDU#AbstractReferenceType
 :AbstractReferenceType rdf:type owl:Class ;
                        rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractSpatialLocation
+###  https://w3id.org/OSDU#AbstractSpatialLocation
 :AbstractSpatialLocation rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractWPCGroupType
+###  https://w3id.org/OSDU#AbstractWPCGroupType
 :AbstractWPCGroupType rdf:type owl:Class ;
                       rdfs:subClassOf owl:Thing ;
                       rdfs:comment "Generic reference object containing the universal group-type properties of a Work Product Component for inclusion in data type specific Work Product Component objects" .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractWellboreDrillingReason
+###  https://w3id.org/OSDU#AbstractWellboreDrillingReason
 :AbstractWellboreDrillingReason rdf:type owl:Class ;
                                 rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractWorkProductComponent
+###  https://w3id.org/OSDU#AbstractWorkProductComponent
 :AbstractWorkProductComponent rdf:type owl:Class ;
                               rdfs:subClassOf owl:Thing ;
                               rdfs:comment "Generic reference object containing the universal properties of a Work Product Component for inclusion in data type specific Work Product Component objects" .
 
 
-###  http://OSDU_Ontology/OSDU#AliasNameType
+###  https://w3id.org/OSDU#AliasNameType
 :AliasNameType rdf:type owl:Class ;
                rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Ancestry
+###  https://w3id.org/OSDU#Ancestry
 :Ancestry rdf:type owl:Class ;
           rdfs:subClassOf :AbstractLegalParentList ;
           rdfs:comment "The links to data, which constitute the inputs." .
 
 
-###  http://OSDU_Ontology/OSDU#ArtefactRole
+###  https://w3id.org/OSDU#ArtefactRole
 :ArtefactRole rdf:type owl:Class ;
               rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Artefacts
+###  https://w3id.org/OSDU#Artefacts
 :Artefacts rdf:type owl:Class ;
            rdfs:subClassOf owl:Thing ;
            rdfs:comment "An array of Artefacts - each artefact has a Role, Resource tuple. An artefact is distinct from the file, in the sense certain valuable information is generated during loading process (Artefact generation process). Examples include retrieving location data, performing an OCR which may result in the generation of artefacts which need to be preserved distinctly" .
 
 
-###  http://OSDU_Ontology/OSDU#Basin
+###  https://w3id.org/OSDU#Basin
 :Basin rdf:type owl:Class ;
        rdfs:subClassOf :MasterData .
 
 
-###  http://OSDU_Ontology/OSDU#BasinType
+###  https://w3id.org/OSDU#BasinType
 :BasinType rdf:type owl:Class ;
            rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#BusinessRules
+###  https://w3id.org/OSDU#BusinessRules
 :BusinessRules rdf:type owl:Class ;
                rdfs:subClassOf :AbstractBusinessRule ,
                                owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#CoordinateReferenceSystem
+###  https://w3id.org/OSDU#CoordinateReferenceSystem
 :CoordinateReferenceSystem rdf:type owl:Class ;
                            rdfs:subClassOf :AbstractCommonResources ,
                                            :AbstractReferenceType ,
                                            :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Curves
+###  https://w3id.org/OSDU#Curves
 :Curves rdf:type owl:Class ;
         rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#DataQuality
+###  https://w3id.org/OSDU#DataQuality
 :DataQuality rdf:type owl:Class ;
              rdfs:subClassOf :AbstractCommonResources ,
                              :AbstractWPCGroupType ,
@@ -1835,12 +1835,12 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                              :WorkProductComponent .
 
 
-###  http://OSDU_Ontology/OSDU#Dataset
+###  https://w3id.org/OSDU#Dataset
 :Dataset rdf:type owl:Class ;
          rdfs:subClassOf :System .
 
 
-###  http://OSDU_Ontology/OSDU#DatasetProperties
+###  https://w3id.org/OSDU#DatasetProperties
 :DatasetProperties rdf:type owl:Class ;
                    rdfs:subClassOf :AbstractFileSourceInfo ,
                                    owl:Thing ;
@@ -1850,23 +1850,23 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                    owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#DrillingReasonType
+###  https://w3id.org/OSDU#DrillingReasonType
 :DrillingReasonType rdf:type owl:Class ;
                     rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#DrillingReasons
+###  https://w3id.org/OSDU#DrillingReasons
 :DrillingReasons rdf:type owl:Class ;
                  rdfs:subClassOf :AbstractWellboreDrillingReason ;
                  rdfs:comment "The history of drilling reasons of the wellbore" .
 
 
-###  http://OSDU_Ontology/OSDU#EncodingFormatType
+###  https://w3id.org/OSDU#EncodingFormatType
 :EncodingFormatType rdf:type owl:Class ;
                     rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Endian
+###  https://w3id.org/OSDU#Endian
 :Endian rdf:type owl:Class ;
         owl:equivalentClass [ rdf:type owl:Class ;
                               owl:oneOf ( <http://OSDU_Ontology/Volve#Big>
@@ -1875,67 +1875,67 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                             ] .
 
 
-###  http://OSDU_Ontology/OSDU#ExistenceKind
+###  https://w3id.org/OSDU#ExistenceKind
 :ExistenceKind rdf:type owl:Class ;
                rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#ExtensionProperties
+###  https://w3id.org/OSDU#ExtensionProperties
 :ExtensionProperties rdf:type owl:Class ;
                      rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityEventType
+###  https://w3id.org/OSDU#FacilityEventType
 :FacilityEventType rdf:type owl:Class ;
                    rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityEvents
+###  https://w3id.org/OSDU#FacilityEvents
 :FacilityEvents rdf:type owl:Class ;
                 rdfs:subClassOf :AbstractFacilityEvent ;
                 rdfs:comment "A list of key facility events." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityNameAliases
+###  https://w3id.org/OSDU#FacilityNameAliases
 :FacilityNameAliases rdf:type owl:Class ;
                      rdfs:subClassOf :AbstractAliasNames ;
                      rdfs:comment "Alternative names, including historical, by which this facility is/has been known." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityOperators
+###  https://w3id.org/OSDU#FacilityOperators
 :FacilityOperators rdf:type owl:Class ;
                    rdfs:subClassOf :AbstractFacilityOperator ;
                    rdfs:comment "The history of operator organizations of the facility." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilitySpecifications
+###  https://w3id.org/OSDU#FacilitySpecifications
 :FacilitySpecifications rdf:type owl:Class ;
                         rdfs:subClassOf :AbstractFacilitySpecification ;
                         rdfs:comment "facilitySpecification maintains the specification like slot name, wellbore drilling permit number, rig name etc." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityStateType
+###  https://w3id.org/OSDU#FacilityStateType
 :FacilityStateType rdf:type owl:Class ;
                    rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityStates
+###  https://w3id.org/OSDU#FacilityStates
 :FacilityStates rdf:type owl:Class ;
                 rdfs:subClassOf :AbstractFacilityState ;
                 rdfs:comment "The history of life cycle states the facility has been through." .
 
 
-###  http://OSDU_Ontology/OSDU#FacilityType
+###  https://w3id.org/OSDU#FacilityType
 :FacilityType rdf:type owl:Class ;
               rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Field
+###  https://w3id.org/OSDU#Field
 :Field rdf:type owl:Class ;
        rdfs:subClassOf :MasterData .
 
 
-###  http://OSDU_Ontology/OSDU#File.Generic
+###  https://w3id.org/OSDU#File.Generic
 :File.Generic rdf:type owl:Class ;
               rdfs:subClassOf :AbstractCommonResources ,
                               :AbstractDataset ,
@@ -1944,7 +1944,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
               rdfs:comment "The Generic File template." .
 
 
-###  http://OSDU_Ontology/OSDU#FileCollection.Generic
+###  https://w3id.org/OSDU#FileCollection.Generic
 :FileCollection.Generic rdf:type owl:Class ;
                         rdfs:subClassOf :AbstractCommonResources ,
                                         :AbstractDataset ,
@@ -1952,130 +1952,130 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                         :Dataset .
 
 
-###  http://OSDU_Ontology/OSDU#FileSourceInfos
+###  https://w3id.org/OSDU#FileSourceInfos
 :FileSourceInfos rdf:type owl:Class ;
                  rdfs:subClassOf :AbstractFileSourceInfo ,
                                  owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#GeoContexts
+###  https://w3id.org/OSDU#GeoContexts
 :GeoContexts rdf:type owl:Class ;
              rdfs:subClassOf :AbstractGeoContext ;
              rdfs:comment "List of geographic entities which provide context to the master data. This may include multiple types or multiple values of the same type." .
 
 
-###  http://OSDU_Ontology/OSDU#GeographicBottomHoleLocation
+###  https://w3id.org/OSDU#GeographicBottomHoleLocation
 :GeographicBottomHoleLocation rdf:type owl:Class ;
                               rdfs:subClassOf :AbstractSpatialLocation ;
                               rdfs:comment "The bottom hole location of the wellbore denoted by a specified geographic horizontal coordinate reference system (Horizontal CRS), such as WGS84, NAD27, or ED50. If both GeographicBottomHoleLocation and ProjectedBottomHoleLocation properties are populated on this wellbore, they must identify the same point, just in different CRSs." .
 
 
-###  http://OSDU_Ontology/OSDU#GeologicalFormation
+###  https://w3id.org/OSDU#GeologicalFormation
 :GeologicalFormation rdf:type owl:Class ;
                      rdfs:subClassOf :AbstractCommonResources ,
                                      :AbstractReferenceType ,
                                      :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Legal
+###  https://w3id.org/OSDU#Legal
 :Legal rdf:type owl:Class ;
        rdfs:subClassOf :AbstractLegalTags ;
        owl:minCardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://OSDU_Ontology/OSDU#LineageAssertions
+###  https://w3id.org/OSDU#LineageAssertions
 :LineageAssertions rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
                    rdfs:comment "Defines relationships with other objects (any kind of Resource) upon which this work product component depends.  The assertion is directed only from the asserting WPC to ancestor objects, not children.  It should not be used to refer to files or artefacts within the WPC -- the association within the WPC is sufficient and Artefacts are actually children of the main WPC file. They should be recorded in the Data.Artefacts[] array." .
 
 
-###  http://OSDU_Ontology/OSDU#LineageRelationshipType
+###  https://w3id.org/OSDU#LineageRelationshipType
 :LineageRelationshipType rdf:type owl:Class ;
                          rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveBusinessValue
+###  https://w3id.org/OSDU#LogCurveBusinessValue
 :LogCurveBusinessValue rdf:type owl:Class ;
                        rdfs:subClassOf :AbstractCommonResources ,
                                        :AbstractReferenceType ,
                                        :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveFamily
+###  https://w3id.org/OSDU#LogCurveFamily
 :LogCurveFamily rdf:type owl:Class ;
                 rdfs:subClassOf :AbstractCommonResources ,
                                 :AbstractReferenceType ,
                                 :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveMainFamily
+###  https://w3id.org/OSDU#LogCurveMainFamily
 :LogCurveMainFamily rdf:type owl:Class ;
                     rdfs:subClassOf :AbstractCommonResources ,
                                     :AbstractReferenceType ,
                                     :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#LogCurveType
+###  https://w3id.org/OSDU#LogCurveType
 :LogCurveType rdf:type owl:Class ;
               rdfs:subClassOf :AbstractCommonResources ,
                               :AbstractReferenceType ,
                               :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#LogServiceDateInterval
+###  https://w3id.org/OSDU#LogServiceDateInterval
 :LogServiceDateInterval rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing ;
                         rdfs:comment "An interval built from two nested values : StartDate and EndDate. It applies to the whole log services and may apply to composite logs as [start of the first run job] and [end of the last run job]Log Service Date" .
 
 
-###  http://OSDU_Ontology/OSDU#LogType
+###  https://w3id.org/OSDU#LogType
 :LogType rdf:type owl:Class ;
          rdfs:subClassOf :AbstractCommonResources ,
                          :AbstractReferenceType ,
                          :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#MasterData
+###  https://w3id.org/OSDU#MasterData
 :MasterData rdf:type owl:Class ;
             rdfs:subClassOf :System .
 
 
-###  http://OSDU_Ontology/OSDU#MaterialType
+###  https://w3id.org/OSDU#MaterialType
 :MaterialType rdf:type owl:Class ;
               rdfs:subClassOf :AbstractCommonResources ,
                               :AbstractReferenceType ,
                               :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Meta
+###  https://w3id.org/OSDU#Meta
 :Meta rdf:type owl:Class ;
       rdfs:subClassOf :AbstractMetaItem ;
       rdfs:comment "The Frame of Reference meta data section linking the named properties to self-contained definitions." .
 
 
-###  http://OSDU_Ontology/OSDU#NameAlias
+###  https://w3id.org/OSDU#NameAlias
 :NameAlias rdf:type owl:Class ;
            rdfs:subClassOf :AbstractAliasNames ;
            rdfs:comment "Alternative names, including historical, by which this entity instance is/has been known." .
 
 
-###  http://OSDU_Ontology/OSDU#NameAliases
+###  https://w3id.org/OSDU#NameAliases
 :NameAliases rdf:type owl:Class ;
              rdfs:subClassOf :AbstractAliasNames ;
              rdfs:comment "Alternative names, including historical, by which this master data is/has been known (it should include all the identifiers)." .
 
 
-###  http://OSDU_Ontology/OSDU#OSDURegion
+###  https://w3id.org/OSDU#OSDURegion
 :OSDURegion rdf:type owl:Class ;
             rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#OperatingEnvironment
+###  https://w3id.org/OSDU#OperatingEnvironment
 :OperatingEnvironment rdf:type owl:Class ;
                       rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#Organisation
+###  https://w3id.org/OSDU#Organisation
 :Organisation rdf:type owl:Class ;
               rdfs:subClassOf :AbstractCommonResources ,
                               :AbstractMaster ,
@@ -2083,119 +2083,119 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
               rdfs:comment "A legal or administrative body, institution, or company, or any of its divisions." .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationNameAliases
+###  https://w3id.org/OSDU#OrganisationNameAliases
 :OrganisationNameAliases rdf:type owl:Class ;
                          rdfs:subClassOf :AbstractAliasNames ;
                          rdfs:comment "Alternative names, including historical, by which this organisation entity is/has been known." .
 
 
-###  http://OSDU_Ontology/OSDU#OrganisationType
+###  https://w3id.org/OSDU#OrganisationType
 :OrganisationType rdf:type owl:Class ;
                   rdfs:subClassOf :AbstractCommonResources ,
                                   :AbstractReferenceType ,
                                   :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#ParameterType
+###  https://w3id.org/OSDU#ParameterType
 :ParameterType rdf:type owl:Class ;
                rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#ProjectedBottomHoleLocation
+###  https://w3id.org/OSDU#ProjectedBottomHoleLocation
 :ProjectedBottomHoleLocation rdf:type owl:Class ;
                              rdfs:subClassOf :AbstractSpatialLocation ;
                              rdfs:comment "The bottom hole location of the wellbore denoted by a projected horizontal coordinate reference system (Horizontal CRS), such a UTM zone. 'Projected' in this property does not mean 'planned' or 'projected-to-bit'. If both GeographicBottomHoleLocation and ProjectedBottomHoleLocation properties are populated on this wellbore, they must identify the same point, just in different CRSs." .
 
 
-###  http://OSDU_Ontology/OSDU#QualityMetric
+###  https://w3id.org/OSDU#QualityMetric
 :QualityMetric rdf:type owl:Class ;
                rdfs:subClassOf :AbstractQualityMetric ,
                                owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#RefrenceData
+###  https://w3id.org/OSDU#RefrenceData
 :RefrenceData rdf:type owl:Class ;
               rdfs:subClassOf :System .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceCurationStatus
+###  https://w3id.org/OSDU#ResourceCurationStatus
 :ResourceCurationStatus rdf:type owl:Class ;
                         rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceLifecycleStatus
+###  https://w3id.org/OSDU#ResourceLifecycleStatus
 :ResourceLifecycleStatus rdf:type owl:Class ;
                          rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#ResourceSecurityClassification
+###  https://w3id.org/OSDU#ResourceSecurityClassification
 :ResourceSecurityClassification rdf:type owl:Class ;
                                 rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#SchemaFormatType
+###  https://w3id.org/OSDU#SchemaFormatType
 :SchemaFormatType rdf:type owl:Class ;
                   rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#SpatialArea
+###  https://w3id.org/OSDU#SpatialArea
 :SpatialArea rdf:type owl:Class ;
              rdfs:subClassOf :AbstractSpatialLocation ;
              rdfs:comment "A polygon boundary that reflects the locale of the content of the work product component (location of the subject matter)." .
 
 
-###  http://OSDU_Ontology/OSDU#SpatialLocation
+###  https://w3id.org/OSDU#SpatialLocation
 :SpatialLocation rdf:type owl:Class ;
                  rdfs:subClassOf :AbstractSpatialLocation ;
                  rdfs:comment "The spatial location information such as coordinates, CRS information (left empty when not appropriate)." .
 
 
-###  http://OSDU_Ontology/OSDU#SpatialPoint
+###  https://w3id.org/OSDU#SpatialPoint
 :SpatialPoint rdf:type owl:Class ;
               rdfs:subClassOf :AbstractSpatialLocation ;
               rdfs:comment "A centroid point that reflects the locale of the content of the work product component (location of the subject matter)." .
 
 
-###  http://OSDU_Ontology/OSDU#StandardsOrganisation
+###  https://w3id.org/OSDU#StandardsOrganisation
 :StandardsOrganisation rdf:type owl:Class ;
                        rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#System
+###  https://w3id.org/OSDU#System
 :System rdf:type owl:Class ;
         rdfs:subClassOf owl:Thing .
 
 
-###  http://OSDU_Ontology/OSDU#UnitOfMeasure
+###  https://w3id.org/OSDU#UnitOfMeasure
 :UnitOfMeasure rdf:type owl:Class ;
                rdfs:subClassOf :AbstractCommonResources ,
                                :AbstractReferenceType ,
                                :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#UnitQuantity
+###  https://w3id.org/OSDU#UnitQuantity
 :UnitQuantity rdf:type owl:Class ;
               rdfs:subClassOf :AbstractCommonResources ,
                               :AbstractReferenceType ,
                               :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementPath
+###  https://w3id.org/OSDU#VerticalMeasurementPath
 :VerticalMeasurementPath rdf:type owl:Class ;
                          rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementSource
+###  https://w3id.org/OSDU#VerticalMeasurementSource
 :VerticalMeasurementSource rdf:type owl:Class ;
                            rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurementType
+###  https://w3id.org/OSDU#VerticalMeasurementType
 :VerticalMeasurementType rdf:type owl:Class ;
                          rdfs:subClassOf :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#VerticalMeasurements
+###  https://w3id.org/OSDU#VerticalMeasurements
 :VerticalMeasurements rdf:type owl:Class ;
                       rdfs:subClassOf :AbstractFacilityVerticalMeasurement ;
                       rdfs:comment "List of all depths and elevations pertaining to the well, like, water depth, mud line elevation, etc." ,
@@ -2203,7 +2203,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                                    "References an entry in the Vertical Measurement array for the Wellbore identified by WellboreID, which defines the vertical reference datum for the logged depths." .
 
 
-###  http://OSDU_Ontology/OSDU#Well
+###  https://w3id.org/OSDU#Well
 :Well rdf:type owl:Class ;
       rdfs:subClassOf :AbstractCommonResources ,
                       :AbstractFacility ,
@@ -2212,14 +2212,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
       rdfs:comment "The origin of a set of wellbores." .
 
 
-###  http://OSDU_Ontology/OSDU#WellInterestType
+###  https://w3id.org/OSDU#WellInterestType
 :WellInterestType rdf:type owl:Class ;
                   rdfs:subClassOf :AbstractCommonResources ,
                                   :AbstractReferenceType ,
                                   :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#WellLog
+###  https://w3id.org/OSDU#WellLog
 :WellLog rdf:type owl:Class ;
          rdfs:subClassOf :AbstractCommonResources ,
                          :AbstractWPCGroupType ,
@@ -2227,7 +2227,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                          :WorkProductComponent .
 
 
-###  http://OSDU_Ontology/OSDU#Wellbore
+###  https://w3id.org/OSDU#Wellbore
 :Wellbore rdf:type owl:Class ;
           rdfs:subClassOf :AbstractCommonResources ,
                           :AbstractMaster ,
@@ -2235,7 +2235,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
           rdfs:comment "\"A hole in the ground extending from a point at the earth's surface to the maximum point of penetration." .
 
 
-###  http://OSDU_Ontology/OSDU#WellboreTrajectory
+###  https://w3id.org/OSDU#WellboreTrajectory
 :WellboreTrajectory rdf:type owl:Class ;
                     rdfs:subClassOf :AbstractCommonResources ,
                                     :AbstractWPCGroupType ,
@@ -2244,14 +2244,14 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                     rdfs:comment "Work Product Component describing an individual instance of a wellbore trajectory data object. Also called a deviation survey, wellbore trajectory is data that is used to calculate the position and spatial uncertainty of a planned or actual wellbore in 2-dimensional and 3-dimensional space." .
 
 
-###  http://OSDU_Ontology/OSDU#WellboreTrajectoryType
+###  https://w3id.org/OSDU#WellboreTrajectoryType
 :WellboreTrajectoryType rdf:type owl:Class ;
                         rdfs:subClassOf :AbstractCommonResources ,
                                         :AbstractReferenceType ,
                                         :RefrenceData .
 
 
-###  http://OSDU_Ontology/OSDU#WorkProductComponent
+###  https://w3id.org/OSDU#WorkProductComponent
 :WorkProductComponent rdf:type owl:Class ;
                       rdfs:subClassOf :System .
 
@@ -2264,62 +2264,62 @@ sh:NodeShape rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://OSDU_Ontology/OSDU#AbstractBusinessRule
+###  https://w3id.org/OSDU#AbstractBusinessRule
 :AbstractBusinessRule rdf:type owl:NamedIndividual ,
                                sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFileCollection
+###  https://w3id.org/OSDU#AbstractFileCollection
 :AbstractFileCollection rdf:type owl:NamedIndividual ,
                                  sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractFileSourceInfo
+###  https://w3id.org/OSDU#AbstractFileSourceInfo
 :AbstractFileSourceInfo rdf:type owl:NamedIndividual ,
                                  sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#AbstractQualityMetric
+###  https://w3id.org/OSDU#AbstractQualityMetric
 :AbstractQualityMetric rdf:type owl:NamedIndividual ,
                                 sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#BusinessRules
+###  https://w3id.org/OSDU#BusinessRules
 :BusinessRules rdf:type owl:NamedIndividual ,
                         sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#DataQuality
+###  https://w3id.org/OSDU#DataQuality
 :DataQuality rdf:type owl:NamedIndividual ,
                       sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#Dataset
+###  https://w3id.org/OSDU#Dataset
 :Dataset rdf:type owl:NamedIndividual ,
                   sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#DrillingReasonType
+###  https://w3id.org/OSDU#DrillingReasonType
 :DrillingReasonType rdf:type owl:NamedIndividual ,
                              sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#Field
+###  https://w3id.org/OSDU#Field
 :Field rdf:type owl:NamedIndividual ,
                 sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#FileCollection.Generic
+###  https://w3id.org/OSDU#FileCollection.Generic
 :FileCollection.Generic rdf:type owl:NamedIndividual ,
                                  sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#FileSourceInfos
+###  https://w3id.org/OSDU#FileSourceInfos
 :FileSourceInfos rdf:type owl:NamedIndividual ,
                           sh:NodeShape .
 
 
-###  http://OSDU_Ontology/OSDU#QualityMetric
+###  https://w3id.org/OSDU#QualityMetric
 :QualityMetric rdf:type owl:NamedIndividual ,
                         sh:NodeShape .
 
