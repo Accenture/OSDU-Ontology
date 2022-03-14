@@ -9,6 +9,7 @@
 @base <https://w3id.org/osdu#> .
 
 <https://w3id.org/osdu#> rdf:type owl:Ontology ;
+                          <http://purl.org/dc/elements/1.1/creator> "Neda Abolhassani, Ph.D."^^xsd:string ;
                           <http://purl.org/dc/elements/1.1/title> "OSDU Ontology"^^xsd:string ;
                           owl:versionInfo "Version 1.0" ;
                           sh:description "An ontology for the subsurface energy data."^^xsd:string .
@@ -16,6 +17,10 @@
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
