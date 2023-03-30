@@ -53,8 +53,8 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 
 
 <https://w3id.org/osdu#> rdf:type owl:Ontology ;
-                          <http://purl.org/dc/elements/1.1/creator> "Neda Abolhassani, Ph.D."^^xsd:string ;
-                          <http://purl.org/dc/elements/1.1/creator> "Ana Tudor, M.S."^^xsd:string ;
+                          <http://purl.org/dc/elements/1.1/creator> "Neda Abolhassani, Ph.D. and Ana Tudor, M.S."^^xsd:string ;
+                       
                           <http://purl.org/dc/elements/1.1/title> "OSDU Ontology"^^xsd:string ;
                           owl:imports rdf: ;
                           owl:imports rdfs: ;
@@ -67,7 +67,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           owl:imports <http://xmlns.com/foaf/0.1/> ;
                           owl:imports foaf: ;
                           owl:imports <https://www.geonames.org/ontology/ontology_v3.3.rdf> ;
-                          owl:versionInfo "Version 1.0" ;
+                          owl:versionInfo "Version 2.0" ;
 .
 
 
