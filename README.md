@@ -16,7 +16,9 @@ A tool to convert the OSDU data loading schema to an OWL3-based ontology, in .tt
 Python3, with libraries numpy and regex.
 
 # Installation
+~~~
 git clone https://github.com/Accenture/OSDU-Ontology.git
+~~~
 
 # Usage
 Download the latest OSDU schema from [this location.] (https://community.opengroup.org/osdu/platform/data-flow/data-loading/open-test-data/-/tree/master/rc--3.0.0/3-schema)
