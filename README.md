@@ -9,7 +9,7 @@ The OSDU Ontology is licensed under the Apache License 2.0 - see [License](./Lic
 #Ontology Files
 Load the [.ttl](./ttl/OSDU.ttl) in your favorite ontology editor, e.g. [Protege](https://protege.stanford.edu/products.php#desktop-protege).
 
-# Ontology Generator Code
+# Ontology Generator
 A tool to convert the OSDU data loading schema to an OWL3-based ontology, in .ttl format.
 
 # Dependecies
@@ -22,7 +22,11 @@ git clone https://github.com/Accenture/OSDU-Ontology.git
 Download the latest OSDU schema from [this location.] (https://community.opengroup.org/osdu/platform/data-flow/data-loading/open-test-data/-/tree/master/rc--3.0.0/3-schema)
 
 From a terminal in the osdu-ontology-generator folder:
+~~~
 python3 -m create_ontology --src path_to_full_schema/
+~~~
 
 To run metric calculation (with reporting in terminal):
+~~~
 python3 -m create_ontology --src path_to_full_schema/ --report_metrics
+~~~
