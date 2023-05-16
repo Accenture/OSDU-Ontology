@@ -1,5 +1,5 @@
 # OSDU Ontology 
-This is an open source ontology for the subsurface energy data based on [schema files and standards](https://community.opengroup.org/osdu/platform/data-flow/data-loading/open-test-data/-/tree/master/rc--3.0.0/3-schema) specified by the [Open Subsurface Data Universe](https://osduforum.org/) community.
+This is an open source ontology for the subsurface energy data based on [3rd release of the schema files and standards ](https://community.opengroup.org/osdu/platform/data-flow/data-loading/open-test-data/-/tree/master/rc--3.0.0/3-schema) specified by the [Open Subsurface Data Universe](https://osduforum.org/) community.
 Please see the [documentation](./docs) for more information about OSDU and how the ontology is designed.
 
 # License
