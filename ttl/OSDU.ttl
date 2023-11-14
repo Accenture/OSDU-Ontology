@@ -11501,7 +11501,7 @@ osdu:boundingBoxEastBoundLongitude rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Eastern longitude limit of the bounding box in degrees based on WGS 84 " ;
 	rdfs:domain osdu:Extent ;
 	rdfs:range xsd:decimal ;
-	owl:subPropertyOf gn:longitude ;
+	rdfs:subPropertyOf gn:longitude ;
 .
 
 ###  https://w3id.org/osdu#boundingBoxNorthBoundLatitude
@@ -11509,7 +11509,7 @@ osdu:boundingBoxNorthBoundLatitude rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Northern latitude limit of the bounding box in degrees based on WGS 84 " ;
 	rdfs:domain osdu:Extent ;
 	rdfs:range xsd:decimal ;
-	owl:subPropertyOf gn:latitude ;
+	rdfs:subPropertyOf gn:latitude ;
 .
 
 ###  https://w3id.org/osdu#boundingBoxSouthBoundLatitude
@@ -11517,7 +11517,7 @@ osdu:boundingBoxSouthBoundLatitude rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Southern latitude limit of the bounding box in degrees based on WGS 84 " ;
 	rdfs:domain osdu:Extent ;
 	rdfs:range xsd:decimal ;
-	owl:subPropertyOf gn:latitude ;
+	rdfs:subPropertyOf gn:latitude ;
 .
 
 ###  https://w3id.org/osdu#boundingBoxWestBoundLongitude
@@ -11525,7 +11525,7 @@ osdu:boundingBoxWestBoundLongitude rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Western longitude limit of the bounding box in degrees based on WGS 84 " ;
 	rdfs:domain osdu:Extent ;
 	rdfs:range xsd:decimal ;
-	owl:subPropertyOf gn:longitude ;
+	rdfs:subPropertyOf gn:longitude ;
 .
 
 ###  https://w3id.org/osdu#brandName
