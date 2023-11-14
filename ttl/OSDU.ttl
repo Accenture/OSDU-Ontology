@@ -1144,7 +1144,7 @@ osdu:BasinType rdf:type owl:Class ;
 	rdfs:subClassOf osdu:AbstractReferenceType ;
 .
 
-###  https://w3id.org/osdu#BasinType
+###  https://w3id.org/osdu#BBox
 osdu:BBox rdf:type owl:Class ;
 	rdfs:comment "A class for capturing ordered coordinates for a bounded box" ;
 	rdfs:subClassOf osdu:Array ;
@@ -11305,7 +11305,7 @@ osdu:basinTypeID rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#bbox
+###  https://w3id.org/osdu#hasBBox
 osdu:hasBBox rdf:type owl:DatatypeProperty ;
 	rdfs:domain [
 		rdf:type owl:Class ;
