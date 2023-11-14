@@ -6027,8 +6027,8 @@ osdu:WorldFile rdf:type owl:Class ;
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/osdu#aBCDBinGridLocalCoordinates
-osdu:aBCDBinGridLocalCoordinates rdf:type owl:ObjectProperty ;
+###  https://w3id.org/osdu#abcdDBinGridLocalCoordinates
+osdu:abcdBinGridLocalCoordinates rdf:type owl:ObjectProperty ;
 	rdfs:comment "Reference to the ABCDBinGridLocalCoordinates for the object " ;
 	rdfs:domain osdu:AbstractBinGrid ;
 	rdfs:range osdu:AbstractCoordinates ;
@@ -10343,15 +10343,15 @@ osdu:unstructuredGridPatches rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  https://w3id.org/osdu#aFENumber
-osdu:aFENumber rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#afeNumber
+osdu:afeNumber rdf:type owl:DatatypeProperty ;
 	rdfs:comment "AFE number that this cost item applies to. " ;
 	rdfs:domain osdu:Cost ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#aPIKeyKeyName
-osdu:aPIKeyKeyName rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#apiKeyKeyName
+osdu:apiKeyKeyName rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Key for obtaining an API key from the secret repository " ;
 	rdfs:domain osdu:SecurityScheme ;
 	rdfs:range xsd:string ;
@@ -11577,8 +11577,8 @@ osdu:businessIntentionID rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#cCLTopShotDistance
-osdu:cCLTopShotDistance rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#cclTopShotDistance
+osdu:cclTopShotDistance rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Distance from CCL to Interval Top " ;
 	rdfs:domain osdu:PerforationInterval ;
 	rdfs:range xsd:decimal ;
@@ -15538,8 +15538,8 @@ osdu:i rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:integer ;
 .
 
-###  https://w3id.org/osdu#iADCCode
-osdu:iADCCode rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#iadcCode
+osdu:iadcCode rdf:type owl:DatatypeProperty ;
 	rdfs:comment "IADC bit code. " ;
 	rdfs:domain osdu:BitRecord ;
 	rdfs:range xsd:string ;
@@ -16935,8 +16935,8 @@ osdu:maasp rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:decimal ;
 .
 
-###  https://w3id.org/osdu#mPPPressure
-osdu:mPPPressure rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#mppPressure
+osdu:mppPressure rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Mid point perf pressure " ;
 	rdfs:domain osdu:PerforationInterval ;
 	rdfs:range xsd:decimal ;
@@ -18704,15 +18704,15 @@ osdu:p6TransformationMethod rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:integer ;
 .
 
-###  https://w3id.org/osdu#pONumber
-osdu:pONumber rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#poNumber
+oNumber rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Purchase order number provided by the operator. " ;
 	rdfs:domain osdu:Cost ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#pPFGDatasetID
-osdu:pPFGDatasetID rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#ppfgDatasetID
+osdu:ppfgDatasetID rdf:type owl:DatatypeProperty ;
 	rdfs:comment "A reference to the PPFG data set associated with this object" ;
 	rdfs:domain [
 		rdf:type owl:Class ;
@@ -21021,8 +21021,8 @@ osdu:runStartHoleMeasuredDepth rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:decimal ;
 .
 
-###  https://w3id.org/osdu#sEGYRevision
-osdu:sEGYRevision rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#segyRevision
+osdu:segyRevision rdf:type owl:DatatypeProperty ;
 	rdfs:comment "The SEG-Y standard revision the SEG-Y file set is conforming to. " ;
 	rdfs:domain osdu:SEGY ;
 	rdfs:range xsd:string ;
@@ -23040,8 +23040,8 @@ osdu:systemComponentVolume rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:decimal ;
 .
 
-###  https://w3id.org/osdu#tVD
-osdu:tVD rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#tvd
+osdu:tvd rdf:type owl:DatatypeProperty ;
 	rdfs:comment "True vertical depth to the record/activity/operation. " ;
 	rdfs:domain [
 		rdf:type owl:Class ;
@@ -24167,8 +24167,8 @@ osdu:uri rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#uTCDateTimeValues
-osdu:uTCDateTimeValues rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#utcDateTimeValue
+osdu:utcDateTimeValue rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Array of datetime in iso-format (in ascending order) yyyy-MM-dd  HH:mm:UTC,type:DTM " ;
 	rdfs:domain osdu:TimeSeries ;
 	rdfs:range time:DateTimeDescription ;
@@ -24819,15 +24819,15 @@ osdu:volumeWasteDischarged rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:decimal ;
 .
 
-###  https://w3id.org/osdu#wBETestPlanName
-osdu:wBETestPlanName rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#wbeTestPlanName
+osdu:wbeTestPlanName rdf:type owl:DatatypeProperty ;
 	rdfs:comment "The name of the Well Barrier Element Test Plan " ;
 	rdfs:domain osdu:WellBarrierElementTest ;
 	rdfs:range xsd:string ;
 .
 
-###  https://w3id.org/osdu#wITSMLVersion
-osdu:wITSMLVersion rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/osdu#witsmlVersion
+osdu:witsmlVersion rdf:type owl:DatatypeProperty ;
 	rdfs:comment "The Version of the WITSML standard. " ;
 	rdfs:domain osdu:WITSML ;
 	rdfs:range xsd:string ;
