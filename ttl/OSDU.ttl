@@ -65,7 +65,7 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
                           owl:imports <http://www.w3.org/ns/auth/acl#> ;
                           owl:imports <http://xmlns.com/foaf/0.1/> ;
                           owl:imports foaf: ;
-                          owl:imports <https://www.geonames.org/ontology/ontology_v3.3.rdf/> ;
+                          owl:imports <https://www.geonames.org/ontology/ontology_v3.3.rdf> ;
                           owl:versionInfo "Version 1.0" ;
 .
 
@@ -124,7 +124,7 @@ osdu:AbstractAnyCrsFeatureCollection rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -265,7 +265,7 @@ osdu:AbstractFeatureCollection rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -732,7 +732,7 @@ osdu:AnyCrsGeoJSONFeature rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -759,7 +759,7 @@ osdu:AnyCrsGeoJSONGeometryCollection rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -787,7 +787,7 @@ osdu:AnyCrsGeoJSONLineString rdf:type owl:Class ;
 	] ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -820,7 +820,7 @@ osdu:AnyCrsGeoJSONMultiLineString rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -864,7 +864,7 @@ osdu:AnyCrsGeoJSONMultiPoint rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -897,7 +897,7 @@ osdu:AnyCrsGeoJSONMultiPolygon rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -952,7 +952,7 @@ osdu:AnyCrsGeoJSONPoint rdf:type owl:Class ;
 	] ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -974,7 +974,7 @@ osdu:AnyCrsGeoJSONPolygon rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -1145,7 +1145,7 @@ osdu:BasinType rdf:type owl:Class ;
 .
 
 ###  https://w3id.org/osdu#BasinType
-osdu:BBOX rdf:type owl:Class ;
+osdu:BBox rdf:type owl:Class ;
 	rdfs:comment "A class for capturing ordered coordinates for a bounded box" ;
 	rdfs:subClassOf osdu:Array ;
 .
@@ -2392,7 +2392,7 @@ osdu:GeoJSONFeature rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2419,7 +2419,7 @@ osdu:GeoJSONGeometryCollection rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2447,7 +2447,7 @@ osdu:GeoJSONLineString rdf:type owl:Class ;
 	] ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2480,7 +2480,7 @@ osdu:GeoJSONMultiLineString rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2524,7 +2524,7 @@ osdu:GeoJSONMultiPoint rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2557,7 +2557,7 @@ osdu:GeoJSONMultiPolygon rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2612,7 +2612,7 @@ osdu:GeoJSONPoint rdf:type owl:Class ;
 	] ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -2634,7 +2634,7 @@ osdu:GeoJSONPolygon rdf:type owl:Class ;
 	rdfs:subClassOf osdu:Geometries ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
-		owl:onProperty osdu:bbox ;
+		owl:onProperty osdu:hasBBox ;
 		owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
 		owl:onDataRange xsd:decimal ;
 	] ;
@@ -3977,11 +3977,6 @@ osdu:Point rdf:type owl:Class ;
 	rdfs:subClassOf [
 		a owl:Restriction ;
 		owl:onProperty osdu:observationMeasuredDepth ;
-		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
-	rdfs:subClassOf [
-		a owl:Restriction ;
-		owl:onproperty osdu:hasPoint;
 		owl:minCardinality "1"^^xsd:nonNegativeInteger ;
 	] ;
 	rdfs:subClassOf [
@@ -8321,7 +8316,7 @@ osdu:hasPoint rdf:type owl:ObjectProperty ;
 		owl:unionOf (
 			osdu:AnyCrsGeoJSONLineStringCoordinatesArray
 			osdu:AnyCrsGeoJSONPolygonCoordinatesArray
-			osdu:BBOX
+			osdu:BBox
 			osdu:MaximumTorqueOnBottom
 			osdu:MinimumTorqueOnBottom
 			osdu:MaximumRPM
@@ -11311,7 +11306,7 @@ osdu:basinTypeID rdf:type owl:DatatypeProperty ;
 .
 
 ###  https://w3id.org/osdu#bbox
-osdu:bbox rdf:type owl:DatatypeProperty ;
+osdu:hasBBox rdf:type owl:DatatypeProperty ;
 	rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
@@ -11335,7 +11330,7 @@ osdu:bbox rdf:type owl:DatatypeProperty ;
 			osdu:AbstractFeatureCollection
 		) ;
 	] ;
-	rdfs:range osdu:BBOX ;
+	rdfs:range osdu:BBox ;
 .
 
 ###  https://w3id.org/osdu#beaufortScaleNumber
@@ -25439,4 +25434,3 @@ osdu:zincOxide rdf:type owl:DatatypeProperty ;
 	rdfs:domain osdu:Fluid ;
 	rdfs:range xsd:decimal ;
 .
-
