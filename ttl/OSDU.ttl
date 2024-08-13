@@ -18705,7 +18705,7 @@ osdu:p6TransformationMethod rdf:type owl:DatatypeProperty ;
 .
 
 ###  https://w3id.org/osdu#poNumber
-oNumber rdf:type owl:DatatypeProperty ;
+osdu:poNumber rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Purchase order number provided by the operator. " ;
 	rdfs:domain osdu:Cost ;
 	rdfs:range xsd:string ;
