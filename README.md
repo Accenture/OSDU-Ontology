@@ -6,7 +6,7 @@ Please see the [documentation](./docs) for more information about OSDU and how t
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 The OSDU Ontology is licensed under the Apache License 2.0 - see [License](./License).
 
-#Ontology Files
+# Ontology Files
 Load the [.ttl](./ttl/OSDU.ttl) in your favorite ontology editor, e.g. [Protege](https://protege.stanford.edu/products.php#desktop-protege).
 
 # Ontology Generator
