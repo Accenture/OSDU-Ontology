@@ -33,7 +33,9 @@ def compute_metrics(class_ontology_dict: dict, prop_ontology_dict: dict) -> dict
         metrics_dict: dictionary mapping metric key to calculated metric value for the OSDU ontology
     """
     # Construct ontology inheritance graph
-    inheritance_g = extract_inheritance_graph(class_ontology_dict, prop_ontology_dict)
+    inheritance_g = extract_inheritance_graph(
+        class_ontology_dict, prop_ontology_dict, False
+    )
 
     # Construct ontology property (non-inheritance) graph
     property_g = extract_property_graph(class_ontology_dict, prop_ontology_dict)
@@ -80,7 +82,7 @@ def compute_metrics(class_ontology_dict: dict, prop_ontology_dict: dict) -> dict
 
 
 def extract_inheritance_graph(
-    class_ontology_dict: dict, prop_ontology_dict: dict
+    class_ontology_dict: dict, prop_ontology_dict: dict, extract_classname: bool = True
 ) -> nx.MultiDiGraph:
     # Build a directed graph - TODO: verify that it is acyclic?
     inheritance_g = nx.MultiDiGraph()
@@ -89,7 +91,10 @@ def extract_inheritance_graph(
 
     for class_key, class_rep in class_ontology_dict.items():
         for superclass_key in class_rep.superclass_list:
-            superclass_name = extract_classname_from_filename(superclass_key)
+            if extract_classname:
+                superclass_name = extract_classname_from_filename(superclass_key)
+            else:
+                superclass_name = superclass_key
             inheritance_g.add_edge(superclass_name, class_key)
 
     return inheritance_g
@@ -105,7 +110,8 @@ def extract_property_graph(
     # For each property, add an edge between each of the domain classes and the range class
     for prop_key, prop_rep in prop_ontology_dict.items():
         for range_name in prop_rep.range:
-            property_g.add_node(range_name)
+            if range_name not in property_g.nodes:
+                property_g.add_node(range_name)
             e_bunch = zip(
                 prop_rep.domain,
                 [range_name] * len(prop_rep.domain),
@@ -132,9 +138,18 @@ def calc_adit_ln_metrics(
     root_class_list = []
 
     for class_key, class_rep in class_ontology_dict.items():
-        if (len(class_rep.superclass_list) == 1) and class_rep.superclass_list[
-            0
-        ] == "owl:Thing":
+        if (
+            (
+                (len(class_rep.superclass_list) == 1)
+                and class_rep.superclass_list[0] == "owl:Thing"
+            )
+            or (
+                (len(class_rep.superclass_list) == 1)
+                and class_rep.superclass_list[0]
+                == "http://www.w3.org/2002/07/owl#Thing"
+            )
+            or (len(class_rep.superclass_list) == 0)
+        ):
             root_class_list.append(class_key)
         else:
             for superclass_key in class_rep.superclass_list:
@@ -154,6 +169,7 @@ def calc_adit_ln_metrics(
     for i, root_class in enumerate(root_class_list):
         for j, leaf_class in enumerate(leaf_class_list):
             if nx.has_path(inheritance_g, source=root_class, target=leaf_class):
+
                 paths_gen = nx.all_simple_paths(
                     inheritance_g, source=root_class, target=leaf_class
                 )

@@ -1,6 +1,7 @@
 import regex as re
 from enum import Enum
 from .str_utils import *
+import numpy as np
 
 
 # Enumerating the OWL objects used in this ontology
@@ -33,9 +34,11 @@ class PropertyRep:
         name: str,
         domain_name_list: list,
         range_name: str,
+        range_list: list = [],
         comments: list = [],
         prop_type: str = PropType.Datatype,
         pattern: str = "",
+        process_name_flag: bool = True,
     ):
         """Defines a representation of an OSDU property,
             identified using the name field.
@@ -55,14 +58,37 @@ class PropertyRep:
                 Defaults to PropType.Datatype.
             pattern (str, optional): regex pattern associated with this property. Defaults to ''.
         """
-        self.name = process_prop_name(name)
-        self.domain = [process_name(domain_name) for domain_name in domain_name_list]
-        self.range = [process_range(range_name)]
+        if process_name_flag:
+            self.name = process_prop_name(name)
+            self.domain = [
+                process_name(domain_name) for domain_name in domain_name_list
+            ]
+            if range_list:
+                self.range = [process_range(n) for n in range_list]
+            else:
+                self.range = [process_range(range_name)]
+        else:
+            self.name = name
+            self.domain = domain_name_list
+            if range_list:
+                self.range = range_list
+            else:
+                self.range = [range_name]
+
         self.comments = process_comments(comments)
         self.type = prop_type
-        if (process_range(range_name) not in literals_dict) or (
-            process_range(range_name) == "object"
-        ):
+        if np.any([f"#{key}" in self.range[0] for key in literals_dict.keys()]):
+            self.type = PropType.Datatype
+            newr = []
+            for r in self.range:
+                added = False
+                for key in literals_dict.keys():
+                    if f"#{key}" in r:
+                        newr.append(key)
+                        added = True
+                if not added:
+                    newr.append(r)
+        elif (self.range[0] not in literals_dict) or (self.range[0] == "object"):
             self.type = PropType.Object
         else:
             self.type = PropType.Datatype
@@ -147,6 +173,7 @@ class ClassRep:
         comments: list = [],
         pref_label: str = "",
         subclass_list: list = [],
+        process_name_flag: bool = True,
     ):
         """Defines a representation of an OSDU class node,
             identified using the name field,
@@ -167,7 +194,7 @@ class ClassRep:
 
         # Storage of ontology inheritance hierarchy using list of pointers to other classes
         self.superclass_list = []
-        self.add_superclasses(superclass_list)
+        self.add_superclasses(superclass_list, process_name_flag=process_name_flag)
 
         # Clean comments for compatibility with the TopBraid Ontology Composer
         self.comments = process_comments(comments)
@@ -176,7 +203,7 @@ class ClassRep:
         self.sameas = []
 
         self.subclass_list = []
-        self.add_subclasses(subclass_list)
+        self.add_subclasses(subclass_list, process_name_flag=process_name_flag)
 
         self.array_props = []
 
@@ -244,14 +271,14 @@ class ClassRep:
                 self.superclass_list.remove("owl:Thing")
             self.superclass_list.append(processed_superclass)
 
-    def add_superclasses(self, superclass_list: list):
+    def add_superclasses(self, superclass_list: list, process_name_flag: bool = True):
         """Add a list of classes which are inherited by the current one, if not already listed
         Args:
             superclass_list (list): string names referencing OSDU classes
         """
         if superclass_list != []:
             for superclass in superclass_list:
-                self.add_superclass(superclass)
+                self.add_superclass(superclass, process_name_flag=process_name_flag)
 
     def add_subclass(self, subclass_name: str, process_name_flag=True) -> None:
         if process_name_flag:
@@ -263,14 +290,14 @@ class ClassRep:
         if processed_subclass not in self.subclass_list:
             self.subclass_list.append(processed_subclass)
 
-    def add_subclasses(self, subclass_list: list):
+    def add_subclasses(self, subclass_list: list, process_name_flag: bool = True):
         """Add a list of classes which inherit the current one, if not already listed
         Args:
             subclass_list (list): string names referencing OSDU classes
         """
         if subclass_list != []:
             for subclass in subclass_list:
-                self.add_subclass(subclass)
+                self.add_subclass(subclass, process_name_flag=process_name_flag)
 
     def add_array_property_restriction(
         self, property_name: str, on_class: str, min_card: int = 1
@@ -332,7 +359,12 @@ def add_property_from_parameters(
                 )
     else:
         ontology_dict[process_prop_name(property_name)] = PropertyRep(
-            property_name, [domain_name], range_name, [comment], property_type, pattern
+            name=property_name,
+            domain_name_list=[domain_name],
+            range_name=range_name,
+            comments=[comment],
+            prop_type=property_type,
+            pattern=pattern,
         )
     return ontology_dict
 
@@ -344,7 +376,8 @@ def add_class_from_parameters(
     comments: list = [],
     pref_label: str = "",
     subclass_list: list = [],
-    verbose=False,
+    verbose: bool = False,
+    process_name_flag: bool = True,
 ) -> dict:
     """If a class has not yet been encountered,
         creates a ClassRep object based on externally-specified parameters.
@@ -360,16 +393,21 @@ def add_class_from_parameters(
     Returns:
         dict: Updated dictionary mapping explored OSDU class names to ClassRep objects.
     """
-    if process_name(class_name) in ontology_dict:
+    class_name_proc = process_name(class_name) if process_name_flag else class_name
+    if class_name_proc in ontology_dict:
         try:
-            ontology_dict[process_name(class_name)].add_superclasses(superclass_list)
-            ontology_dict[process_name(class_name)].add_subclasses(subclass_list)
-            ontology_dict[process_name(class_name)].add_comments(comments)
+            ontology_dict[class_name_proc].add_superclasses(
+                superclass_list, process_name_flag=process_name_flag
+            )
+            ontology_dict[class_name_proc].add_subclasses(
+                subclass_list, process_name_flag=process_name_flag
+            )
+            ontology_dict[class_name_proc].add_comments(comments)
         except Exception:
             if verbose:
                 print("Error in adding superclass or comment to:", class_name)
     else:
-        ontology_dict[process_name(class_name)] = ClassRep(
+        ontology_dict[class_name_proc] = ClassRep(
             class_name,
             superclass_list,
             comments,

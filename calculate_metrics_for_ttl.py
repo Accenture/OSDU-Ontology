@@ -1,18 +1,25 @@
 from src.metrics_calc import compute_metrics
 from src.kg_rep import ClassRep, PropertyRep
-from rdflib import Graph
+from rdflib import Graph, BNode
 import argparse
 import json
+import numpy as np
 
 class_query = """
 SELECT DISTINCT ?a
 WHERE {
     ?a a owl:Class .
+    FILTER NOT EXISTS { 
+        ?a a owl:Restriction .
+    }
 }"""
 class_superclass_query = """
 SELECT DISTINCT ?b
 WHERE {
-    ?name rdfs:subClassOf ?b
+    ?name rdfs:subClassOf ?b .
+    FILTER NOT EXISTS { 
+        ?b a owl:Restriction .
+    }
 }
 """
 class_comment_query = """
@@ -47,6 +54,13 @@ WHERE {{
     ?name rdfs:domain ?b
 }}
 """
+prop_domain_union_query = """
+SELECT DISTINCT ?c
+WHERE {{
+    ?name a {proptype} .
+    ?name rdfs:domain/(owl:unionOf/rdf:rest*/rdf:first)* ?c .
+}}
+"""
 prop_comment_query = """
 SELECT DISTINCT ?b
 WHERE {{
@@ -59,6 +73,14 @@ SELECT DISTINCT ?b
 WHERE {{
     ?name a {proptype} .
     ?name rdfs:range ?b
+}}
+
+"""
+prop_range_union_query = """
+SELECT DISTINCT ?c
+WHERE {{
+    ?name a {proptype} .
+    ?name rdfs:range/(owl:unionOf/rdf:rest*/rdf:first)* ?c .
 }}
 """
 prop_pattern_query = """
@@ -74,34 +96,33 @@ def get_class_reps_from_graph(g):
     class_dict = {}
     qres = g.query(class_query)
     for row in qres:
-        # print(f"{row.a}")
-        name = str(row.a)
-        superclass_list = [
-            str(row.b)
-            for row in g.query(class_superclass_query, initBindings={"name": row.a})
-        ]
-        superclass_list = [s for s in superclass_list if (s != name)]
-        comment_list = [
-            str(row.b)
-            for row in g.query(class_comment_query, initBindings={"name": row.a})
-        ]
-
-        label = "; ".join(
-            [
+        if not isinstance(row.a, BNode):
+            name = str(row.a)
+            superclass_list = [
                 str(row.b)
-                for row in g.query(class_label_query, initBindings={"name": row.a})
+                for row in g.query(class_superclass_query, initBindings={"name": row.a})
             ]
-        )
-        # print(
-        #     f"\nname: {name};\nsuperclasses: {superclass_list};\ncomments: {comment_list};\nlabel: {label}"
-        # )
-        c = ClassRep(
-            name=name,
-            superclass_list=superclass_list,
-            comments=comment_list,
-            pref_label=label,
-        )
-        class_dict[name] = c
+            superclass_list = [s for s in superclass_list if (s != name)]
+            comment_list = [
+                str(row.b)
+                for row in g.query(class_comment_query, initBindings={"name": row.a})
+            ]
+
+            label = "; ".join(
+                [
+                    str(row.b)
+                    for row in g.query(class_label_query, initBindings={"name": row.a})
+                ]
+            )
+
+            c = ClassRep(
+                name=name,
+                superclass_list=superclass_list,
+                comments=comment_list,
+                pref_label=label,
+                process_name_flag=False,
+            )
+            class_dict[name] = c
     return class_dict
 
 
@@ -114,20 +135,42 @@ def get_prop_reps_from_graph(g):
 
     prop_dict = {}
     for name, type in prop_type_dict.items():
-
-        # print(row, type)
         domain_list = [
             row.b
             for row in g.query(
                 prop_domain_query.format(proptype=type), initBindings={"name": name}
             )
         ]
+        domain_union_list = [
+            row.c
+            for row in g.query(
+                prop_domain_union_query.format(proptype=type),
+                initBindings={"name": name},
+            )
+        ]
+        if len(domain_union_list) > 0:
+            domain_list = [
+                domain for domain in domain_union_list if not isinstance(domain, BNode)
+            ]
+
         range_list = [
             row.b
             for row in g.query(
                 prop_range_query.format(proptype=type), initBindings={"name": name}
             )
         ]
+        range_union_list = [
+            row.c
+            for row in g.query(
+                prop_range_union_query.format(proptype=type),
+                initBindings={"name": name},
+            )
+        ]
+        if len(range_union_list) > 0:
+            range_list = [
+                range for range in range_union_list if not isinstance(range, BNode)
+            ]
+
         comment_list = [
             row.b
             for row in g.query(
@@ -140,16 +183,15 @@ def get_prop_reps_from_graph(g):
                 prop_pattern_query.format(proptype=type), initBindings={"name": name}
             )
         ]
-        # print(
-        #     f"\nname: {name};\ndomain_name_list: {domain_list};\nsuperclass_list: {superclass_list};\nrange_name: {range_list}"
-        # )
         p = PropertyRep(
             name=str(name),
             prop_type=type,
-            domain_name_list=domain_list,
-            range_name="" if len(range_list) == 0 else range_list[0],
+            domain_name_list=[str(d) for d in domain_list],
+            range_name="",
+            range_list=[str(r) for r in range_list],
             comments=comment_list,
             pattern="" if len(patterns) == 0 else patterns[0],
+            process_name_flag=False,
         )
         prop_dict[str(name)] = p
 
