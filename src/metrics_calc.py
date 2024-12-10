@@ -166,7 +166,7 @@ def calc_adit_ln_metrics(
                 path_lengths = [len(path) for path in paths] if paths != [] else [0]
                 path_lengths_matrix[i, j] = sum(path_lengths)
     num_paths = np.sum(num_paths_matrix)
-    adit_ln = np.sum(path_lengths_matrix) / num_paths
+    adit_ln = np.sum(path_lengths_matrix) / (num_paths + 1e-8)
     return adit_ln, nol
 
 
@@ -183,18 +183,17 @@ def calc_shortest_path_metrics(ont_graph: nx.MultiDiGraph) -> tuple[float, float
         float: value for avg_shortest_path
         int: value for diameter
     """
-    s_paths = nx.shortest_path(ont_graph)
+    s_paths = dict(nx.shortest_path(ont_graph))
     num_s_paths = sum([len(list(s_paths[key].values())) for key in s_paths.keys()])
 
     shortest_path_lengths = [
         [len(list(path)) for path in s_paths[key].values()] for key in s_paths.keys()
     ]
-
-    diameter = np.max(np.max([path_list for path_list in shortest_path_lengths]))
+    diameter = np.max([np.max(path_list) for path_list in shortest_path_lengths])
 
     return (
         num_s_paths / calc_num_nodes(ont_graph),
-        np.sum(np.sum(shortest_path_lengths)) / num_s_paths,
+        np.sum([np.sum(path) for path in shortest_path_lengths]) / num_s_paths,
         diameter,
     )
 
