@@ -1,4 +1,6 @@
 ** **About Ontology Validator** **
+
+
 This project contains a Python script to calculate structural metrics for an ontology. The script evaluates key aspects of the ontology's structure, including the number of classes, relationships, graph diameter, and various "richness" metrics related to inheritance, attributes, and relationships. These metrics provide valuable insights into the complexity and interconnectivity of the ontology.
 The script outputs the following metrics:
 
@@ -16,5 +18,9 @@ ADIT-LN: The average depth of the inheritance tree of all leaf nodes.
 Relationship richness: Ratio between non-inheritance and inheritance relationships.
 Inheritance richness: The average number of number of subclasses per class.
 Attribute richness: The average number of non-inheritance properties per class (datatype and objecttype properties)
+
+
 ** **Running the Ontology Validator** **
+
+
 python calculate_metrics_for_ttl.py -p "local/path/to/ontology.ttl" -o "desired/local/path/to/output.json
